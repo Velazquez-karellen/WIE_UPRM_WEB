@@ -1,0 +1,11 @@
+Copyright (c) 2025 Karellen Velazquez
+
+Este software es propiedad privada de la Asociación WIE - Universidad de Puerto Rico Mayagüez. 
+No se concede ningún derecho de uso, copia, modificación o distribución sin el permiso explícito del propietario del repositorio. 
+Para colaborar o reutilizar cualquier parte de este proyecto, contacta a:
+
+Karellen Velazquez  
+Email: karellen.velazquez@upr.edu 
+LinkedIn: https://www.linkedin.com/in/karellen-velazquez/
+
+El acceso al repositorio está restringido por invitación directa del propietario.
