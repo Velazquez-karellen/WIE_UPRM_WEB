@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flor de Maga Mentorship Program</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .hero {
+          background: url('img/logos/icon-flor.png') center/cover no-repeat;
+          color: #fff;
+          padding: 7rem 1rem 5rem 1rem;
+          position: relative;
+          text-align: center;
+          box-shadow: 0 4px 24px 0 rgba(60,0,100,0.15);
+        }
+        .hero::after {
+          content: '';
+          position: absolute;
+          top:0; left:0; width:100%; height:100%;
+          background: rgba(0,0,0,0.5);
+          z-index:0;
+        }
+        .hero .container {
+          position: relative;
+          z-index:1;
+          max-width: 650px;
+        }
+        .hero h1 {
+          font-size: 2.8rem;
+          font-weight: 700;
+          margin-bottom: 1.3rem;
+          letter-spacing: 1px;
+          color: #fff !important;  /* <-- Fuerza color blanco */
+          text-shadow: 1px 2px 12px rgba(60,0,70,0.15); /* mejor legibilidad */
+        }
+        .hero p {
+          font-size: 1.2rem;
+          font-weight: 400;
+          margin-bottom: 0;
+          line-height: 1.7;
+        }
+            /* --- Section Title --- */
+            .section-title {
+              color: var(--purple);
+              font-size: 2.2rem;
+              margin: 2.2rem 0 1.5rem 0;
+              text-align:center;
+              font-weight: 700;
+              letter-spacing: 1px;
+            }
+            /* --- Card grid --- */
+            .card-grid {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 2rem;
+              justify-content: center;
+            }
+            .card {
+              background: var(--white);
+              border-radius:12px;
+              box-shadow:0 2px 12px rgba(100,0,80,0.08);
+              padding:2rem 1.25rem;
+              min-width: 270px;
+              max-width: 360px;
+              text-align:center;
+              transition: transform 0.18s, box-shadow 0.18s;
+              margin-bottom: 1.5rem;
+            }
+            .card:hover {
+              transform: translateY(-7px) scale(1.025);
+              box-shadow: 0 8px 24px 0 rgba(120,50,180,0.15);
+            }
+            .card h3 {
+              font-size: 1.27rem;
+              margin-bottom: 0.3rem;
+              color: var(--purple);
+            }
+            .card p {
+              margin-bottom: 1rem;
+            }
+            .card ul {
+              padding-left: 1.2rem;
+              text-align: left;
+            }
+            .card ul li {
+              margin-bottom: 0.4rem;
+            }
+            /* --- General content --- */
+            main section {
+              margin-bottom: 2.5rem;
+            }
+            main section ul {
+              margin: 1rem auto 0 auto;
+              max-width: 700px;
+            }
+            main section > p,
+            main section > ul {
+              font-size: 1.1rem;
+              text-align: center;
+            }
+            /* --- Timeline --- */
+            .timeline {
+              position: relative;
+              max-width: 650px;
+              margin:2rem auto;
+              padding-left:2rem;
+            }
+            .timeline::before {
+              content: '';
+              position: absolute;
+              left:0; top:0; bottom:0;
+              width:4px;
+              background: var(--accent1);
+            }
+            .timeline-item {
+              margin-bottom:1.7rem;
+              position: relative;
+              padding-left: 1.5rem;
+              font-size: 1.07rem;
+              text-align: left;
+            }
+            .timeline-item::before {
+              content: '';
+              position: absolute;
+              left: -11px;
+              top:7px;
+              width:14px; height:14px;
+              background: var(--accent1);
+              border: 3px solid #fff;
+              border-radius:50%;
+              box-shadow: 0 0 0 2px var(--purple);
+            }
+            /* --- Q&A --- */
+            #qa-section {
+              background: var(--accent3);
+              border-radius: 12px;
+              padding: 2rem 1rem;
+              max-width: 700px;
+              margin: 2.5rem auto;
+              text-align: center;
+              box-shadow: 0 2px 10px rgba(100,0,80,0.06);
+            }
+            #qa-section h2 {
+              font-size: 1.7rem;
+              margin-bottom: 1rem;
+            }
+            #qa-section a {
+              color: var(--purple);
+              font-weight: 700;
+              text-decoration: underline;
+              transition: color .18s;
+            }
+            #qa-section a:hover {
+              color: var(--blue);
+            }
+            @media (max-width: 700px) {
+              .hero h1 { font-size: 2.1rem; }
+              .section-title { font-size: 1.5rem; }
+              .timeline { padding-left: 1rem; }
+              .timeline::before { left:0; }
+            }
+    </style>
+</head>
+<body>
+<!-- Header + Navigation -->
+<header class="site-header">
+    <div class="container header-container">
+        <a href="index.html" class="logo">
+            <img src="img/logos/logo-wie.png" alt="IEEE WIE UPRM Logo">
+        </a>
+        <nav class="main-nav">
+            <ul class="nav-links" id="nav-links">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item dropdown">
+                <a href="about.html" class="nav-link">About Us</a>
+                <ul class="dropdown-menu">
+                    <li><a href="board.html"      class="dropdown-link">Directive Board</a></li>
+                    <li><a href="star.html"       class="dropdown-link">STAR Program</a></li>
+                    <li><a href="wip.html"        class="dropdown-link">Women In Power</a></li>
+                    <li><a href="flordemaga.html" class="dropdown-link">Flor de Maga</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+            <li class="nav-item"><a href="sponsors.html" class="nav-link">Sponsors</a></li>
+            <li class="nav-item dropdown">
+                <a href="contact.html" class="nav-link">Contact Us</a>
+                <ul class="dropdown-menu">
+                    <li><a href="contact.html" class="dropdown-link">Contact Form</a></li>
+                    <li><a href="faq.html" class="dropdown-link">Frequently Asked Questions</a></li>
+                </ul>
+            </li>
+            </ul>
+            <form class="search-form" action="search.html" method="get" role="search">
+                <input type="text" name="q" placeholder="Search…" aria-label="Search">
+                <button type="submit" aria-label="Submit search">🔍</button>
+            </form>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <h1>Flor de Maga Mentorship Program</h1>
+        <p>Presented by Luis Núñez &amp; Nathalia Ramos<br>Sept 05, 2024</p>
+    </div>
+</section>
+
+<main class="container">
+    <!-- Meet the Co-Founders -->
+    <section>
+        <h2 class="section-title">Meet the Co-Founders</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Luis J. Núñez Rincón</h3>
+                <p><strong>-th Year Industrial Eng. Student<br>Mentorship Program Manager &amp; Co-Founder</strong></p>
+                <ul>
+                    <li>IEEE WIE UPRM Administrative Assistant</li>
+                    <li>CSE Department Summer Camp "Hacks!" COOP</li>
+                    <li>Research &amp; Summer Internship Opportunities</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Nathalia A. Ramos Mercado</h3>
+                <p><strong>-th Year Industrial Eng. Student<br>Program Coordinator &amp; Co-Founder</strong></p>
+                <ul>
+                    <li>Research Assistant ExDSRAE</li>
+                    <li>Former Project Manager, Collegiate Racing Engineering</li>
+                    <li>Pratt &amp; Whitney PR COOP &amp; GE Aerospace Intern</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Overview -->
+    <section>
+        <h2 class="section-title">Program Overview</h2>
+        <p><em>“Flor de Maga” Mentorship Program</em> is inspired by our STAR Program Phase II (Oct 2023). We guide first-and-second-year female students in engineering disciplines through one-on-one mentoring, connecting them with industry professionals.</p>
+        <ul>
+            <p>Empowerment &amp; guidance for new undergraduates</p>
+            <p>In-depth exploration of chosen career paths</p>
+            <p>Hands-on experience with expert mentors</p>
+        </ul>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section>
+        <h2 class="section-title">Mission &amp; Vision</h2>
+        <ul>
+            <p>Mentor female students starting their college journey</p>
+            <p>Offer leadership workshops and activities</p>
+            <p>Increase representation and inclusivity in engineering</p>
+        </ul>
+    </section>
+
+    <!-- Objectives & Benefits -->
+    <section>
+        <h2 class="section-title">Objectives &amp; Benefits</h2>
+        <ul>
+            <p>Help students define and refine career goals</p>
+            <p>Prepare participants for UPRM Job Fair and internships</p>
+            <p>Facilitate connections with experienced women engineers</p>
+        </ul>
+    </section>
+
+    <!-- Activities Timeline -->
+    <section>
+        <h2 class="section-title">Activities Overview &amp; Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item"><strong>September:</strong> Time Management Workshop</div>
+            <div class="timeline-item"><strong>October:</strong> STAR Program Phase I &amp; Leadership Workshop</div>
+            <div class="timeline-item"><strong>October 28:</strong> STAR Program Phase II Event</div>
+            <div class="timeline-item"><strong>November:</strong> 36th UPRM Job Fair &amp; Empowerment Experience I</div>
+            <div class="timeline-item"><strong>December:</strong> Farewell Event &amp; Empowerment Experience II</div>
+        </div>
+    </section>
+
+    <!-- Mentors & Mentees -->
+    <section>
+        <h2 class="section-title">Mentors &amp; Mentees</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Margarita Blandón</h3>
+                <p><strong>PhD Candidate, Electrical Engineering</strong></p>
+                <ul>
+                    <li>NSF SpectrumX Research Assistant</li>
+                    <li>Mentor at Semillas de Triunfo</li>
+                    <li>Sprouting Ambassador, MIT</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Arelys Marzan Cruz</h3>
+                <p><strong>5th Year Chemical Eng. Student<br>Project Manager, EmpoWer</strong></p>
+                <ul>
+                    <li>Co-op, Southern Company</li>
+                    <li>CMO Engineer Intern, Southern Nuclear</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Q&A -->
+    <section id="qa-section">
+        <h2>Questions &amp; Answers</h2>
+        <p>If you have any questions about the Flor de Maga program or wish to join as a mentor/mentee, please <a href="contact.html">contact us</a>.</p>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>&copy; 2024 IEEE WIE UPRM Student Branch. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

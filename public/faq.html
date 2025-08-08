@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>WIE UPRM – Frequently Asked Questions</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <style>
+        body { background: var(--bg-light);}
+        .faq-hero {
+          background: linear-gradient(110deg, var(--accent2), #ffe3fc 90%);
+          padding: 3rem 1rem 2rem 1rem;
+          text-align: center;
+          margin-bottom: 2.5rem;
+        }
+        .faq-hero h1 {
+          font-size: 2.5rem;
+          color: var(--purple);
+          font-weight: 800;
+          margin-bottom: .7rem;
+          letter-spacing: 1px;
+        }
+        .faq-container {
+          max-width: 700px;
+          margin: 0 auto 3rem auto;
+          background: #fff;
+          border-radius: 20px;
+          box-shadow: 0 4px 20px #be4ba01a;
+          padding: 2.5rem 1.8rem;
+        }
+        .faq-list {
+          list-style: none;
+          margin: 0; padding: 0;
+        }
+        .faq-q {
+          background: var(--accent3);
+          border: none;
+          width: 100%;
+          text-align: left;
+          font-size: 1.25rem;
+          color: var(--purple);
+          padding: 1.1rem 1.3rem;
+          margin: 0;
+          border-radius: 12px;
+          margin-bottom: .6rem;
+          box-shadow: 0 1px 7px #f2c2e1;
+          font-weight: 700;
+          position: relative;
+          cursor: pointer;
+          outline: none;
+          transition: background .18s;
+        }
+        .faq-q::after {
+          content: "▼";
+          font-size: 1.1rem;
+          color: var(--pink);
+          position: absolute;
+          right: 1.4rem;
+          top: 50%;
+          transform: translateY(-50%) rotate(0deg);
+          transition: transform .22s;
+        }
+        .faq-q[aria-expanded="true"]::after {
+          transform: translateY(-50%) rotate(180deg);
+        }
+        .faq-a {
+          max-height: 0;
+          overflow: hidden;
+          background: #f9f0fa;
+          border-radius: 0 0 14px 14px;
+          font-size: 1.09rem;
+          color: #333;
+          box-shadow: 0 2px 12px #e8b7e622;
+          padding: 0 1.3rem;
+          margin-bottom: .9rem;
+          opacity: 0;
+          transition: max-height .35s cubic-bezier(.72,0,.29,1), opacity .19s;
+        }
+        .faq-a.open {
+          max-height: 600px;
+          opacity: 1;
+          padding: 1.1rem 1.3rem 1.1rem 1.3rem;
+        }
+        @media (max-width: 600px) {
+          .faq-container { padding: 1.3rem .4rem;}
+        }
+    </style>
+</head>
+<body>
+<!-- Header + Navigation -->
+<header class="site-header">
+    <div class="container header-container">
+        <a href="index.html" class="logo">
+            <img src="img/logos/logo-wie.png" alt="IEEE WIE UPRM Logo">
+        </a>
+        <nav class="main-nav">
+            <ul class="nav-links" id="nav-links">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="board.html"      class="dropdown-link">Directive Board</a></li>
+                        <li><a href="star.html"       class="dropdown-link">STAR Program</a></li>
+                        <li><a href="wip.html"        class="dropdown-link">Women In Power</a></li>
+                        <li><a href="flordemaga.html" class="dropdown-link">Flor de Maga</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+                <li class="nav-item"><a href="sponsors.html" class="nav-link">Sponsors</a></li>
+                <li class="nav-item dropdown">
+                    <a href="contact.html" class="nav-link active">Contact Us</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="contact.html" class="dropdown-link">Contact Form</a></li>
+                        <li><a href="faq.html" class="dropdown-link active">Frequently Asked Questions</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="search-form" action="search.html" method="get" role="search">
+                <input type="text" name="q" placeholder="Search…" aria-label="Search">
+                <button type="submit" aria-label="Submit search">🔍</button>
+            </form>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="faq-hero">
+    <h1>Frequently Asked Questions</h1>
+    <p style="color:var(--purple);font-weight:500;">Find the most common questions about IEEE WIE UPRM below.</p>
+</section>
+
+<main>
+    <section class="faq-container">
+        <ul class="faq-list">
+            <li>
+                <button class="faq-q" aria-expanded="false" aria-controls="faq1">Is IEEE WIE only for women?</button>
+                <div class="faq-a" id="faq1">
+                    Anyone is encouraged to join the IEEE WIE UPRM Student Branch! We are looking to help build a community of members who are enthusiastic of diversification.
+                </div>
+            </li>
+            <li>
+                <button class="faq-q" aria-expanded="false" aria-controls="faq2">How do I join IEEE WIE UPRM Student Branch Affinity Group?</button>
+                <div class="faq-a" id="faq2">
+                    An IEEE membership is the only requirement to joining our IEEE WIE UPRM Student Branch Affinity Group.<br><br>
+                    <b>With an IEEE membership:</b> Login to myIEEE using your IEEE credentials and choose “Add Services”.<br>
+                    <b>Without an IEEE membership:</b> Join IEEE as a student. You can add IEEE WIE to your membership options.<br>
+                    IEEE membership for students located in Puerto Rico usually costs US$27 for 8 months.<br><br>
+                    Afterward, be sure to visit IEEE UPRM Branch and click the sign-up button to register on our local newsletter.
+                </div>
+            </li>
+            <li>
+                <button class="faq-q" aria-expanded="false" aria-controls="faq3">How can I volunteer with IEEE WIE UPRM?</button>
+                <div class="faq-a" id="faq3">
+                    Please send an email titled “VOLUNTEERING” to wie@uprm.edu. We will add you to our list of people who are interested in volunteering for our events.
+                </div>
+            </li>
+            <li>
+                <button class="faq-q" aria-expanded="false" aria-controls="faq4">What are the benefits of joining IEEE WIE?</button>
+                <div class="faq-a" id="faq4">
+                    IEEE Women in Engineering members can meet colleagues with similar interests in promoting women in engineering and technology and participate in activities that support the IEEE WIE mission.<br><br>
+                    IEEE WIE offers a wide array of benefits and discounts to its members, including:
+                    <ul style="margin: .7rem 0 0 1.2rem;">
+                        <li>Discounted registration to the IEEE WIE Annual International Leadership Conference, Leadership Summits, and other IEEE WIE events</li>
+                        <li>Access to IEEE WIE award-winning magazine (2 issues/yr)</li>
+                        <li>Access to IEEE WIE Newsletter</li>
+                        <li>IEEE WIE awards, scholarships, and travel grants</li>
+                        <li>Participation in exclusive IEEE WIE contests</li>
+                        <li>Volunteer opportunities</li>
+                        <li>Appointments to IEEE WIE Committee</li>
+                        <li>Member Grade advancement support</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <button class="faq-q" aria-expanded="false" aria-controls="faq5">Is IEEE WIE only for electrical and electronics engineers?</button>
+                <div class="faq-a" id="faq5">
+                    IEEE WIE UPRM membership is available to all IEEE members.
+                </div>
+            </li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 IEEE Women in Engineering UPRM Student Branch. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // FAQ accordion toggle
+    document.querySelectorAll('.faq-q').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const panel = document.getElementById(this.getAttribute('aria-controls'));
+            const open = panel.classList.contains('open');
+            // Cierra otros abiertos
+            document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+            document.querySelectorAll('.faq-q').forEach(b => b.setAttribute('aria-expanded', 'false'));
+            // Si estaba cerrado, ábrelo
+            if (!open) {
+                panel.classList.add('open');
+                this.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+    // Mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+        document.getElementById('nav-links').classList.toggle('open');
+    });
+</script>
+</body>
+</html>

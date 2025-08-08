@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>WIE UPRM – Resultados de búsqueda</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- Header + Navigation -->
+<header class="site-header">
+    <div class="container header-container">
+        <a href="index.html" class="logo">
+            <img src="img/logos/logo-wie.png" alt="IEEE WIE UPRM Logo">
+        </a>
+        <nav class="main-nav">
+            <ul class="nav-links" id="nav-links">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item dropdown">
+                <a href="about.html" class="nav-link">About Us</a>
+                <ul class="dropdown-menu">
+                    <li><a href="board.html"      class="dropdown-link">Directive Board</a></li>
+                    <li><a href="star.html"       class="dropdown-link">STAR Program</a></li>
+                    <li><a href="wip.html"        class="dropdown-link">Women In Power</a></li>
+                    <li><a href="flordemaga.html" class="dropdown-link">Flor de Maga</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+            <li class="nav-item"><a href="sponsors.html" class="nav-link">Sponsors</a></li>
+            <li class="nav-item dropdown">
+                <a href="contact.html" class="nav-link">Contact Us</a>
+                <ul class="dropdown-menu">
+                    <li><a href="contact.html" class="dropdown-link">Contact Form</a></li>
+                    <li><a href="faq.html" class="dropdown-link">Frequently Asked Questions</a></li>
+                </ul>
+            </li>
+            </ul>
+            <form class="search-form" action="search.html" method="get" role="search">
+                <input type="text" name="q" placeholder="Search…" aria-label="Search">
+                <button type="submit" aria-label="Submit search">🔍</button>
+            </form>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </div>
+</header>
+
+<!-- Result -->
+<main class="container">
+    <h1>Search Result</h1>
+    <div id="results">
+        <!-- Result list -->
+    </div>
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>&copy; 2025 IEEE Women in Engineering UPRM Student Branch. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+<script src="js/search.js"></script>
+</body>
+</html>

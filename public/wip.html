@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WIE UPRM – Women In Power</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .wip-hero {
+            background: linear-gradient(120deg, #eac0fa 0%, #fff3fb 70%);
+            padding: 3.5rem 1rem 2rem 1rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .wip-hero h1 {
+            font-size: 3rem;
+            color: var(--purple, #652d76);
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            margin-bottom: .5rem;
+        }
+        .wip-hero h2 {
+            font-size: 1.5rem;
+            color: var(--pink, #ff66c4);
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        main.container {
+            max-width: 1050px;
+        }
+        section {
+            margin-bottom: 2.2rem;
+        }
+        section h3, section h4 {
+            color: var(--purple);
+            text-align: center;
+            font-weight: 700;
+        }
+        section h3 {
+            font-size: 2rem;
+            margin-bottom: .7rem;
+        }
+        section h4 {
+            font-size: 1.25rem;
+            margin: 1.1rem 0 0.6rem 0;
+        }
+        section ul {
+            margin-bottom: 1rem;
+        }
+        section ul li {
+            margin-bottom: .3rem;
+            font-size: 1.07rem;
+        }
+        /* =========== Sequence ========== */
+        .sequence {
+          position: relative;
+          max-width: 700px;
+          margin: 2.5rem auto 1.5rem auto;
+          min-height: 260px;
+          background: linear-gradient(90deg, #ffe6fa 60%, #ffc4e0 100%);
+          border-radius: 24px;
+          box-shadow: 0 6px 32px #eec2fa28;
+          padding: 1.8rem 2.4rem 1.8rem 2.4rem;
+          transition: background 0.7s;
+        }
+        .step {
+          display: none;
+          animation: fadeInUp 0.4s;
+        }
+        .step.active {
+          display: block;
+        }
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(40px);}
+          to   { opacity: 1; transform: translateY(0);}
+        }
+        .step h3 {
+          margin-bottom: .7rem;
+          font-size: 1.4rem;
+          color: var(--pink);
+          letter-spacing: 1.3px;
+          font-weight: 800;
+        }
+        .step ul {
+          margin-top: .7rem;
+        }
+        .seq-controls {
+          display: flex;
+          justify-content: center;
+          gap: 2rem;
+          margin-top: 1.5rem;
+        }
+        .seq-btn {
+          background: var(--pink);
+          border: none;
+          color: #fff;
+          font-size: 1.25rem;
+          font-weight: 600;
+          padding: 0.7rem 2.2rem;
+          border-radius: 50px;
+          box-shadow: 0 2px 16px #db7fe230;
+          cursor: pointer;
+          transition: background .2s, transform .15s;
+        }
+        .seq-btn:hover {
+          background: var(--purple);
+          color: #fff;
+          transform: translateY(-3px) scale(1.05);
+        }
+        .seq-dots {
+          display: flex;
+          justify-content: center;
+          margin-top: 1rem;
+          gap: 0.5rem;
+        }
+        .seq-dot {
+          width: 13px; height: 13px;
+          background: #fff;
+          border: 2px solid var(--pink);
+          border-radius: 50%;
+          display: inline-block;
+          cursor: pointer;
+          transition: background .2s, border-color .2s;
+        }
+        .seq-dot.active {
+          background: var(--pink);
+          border-color: var(--purple);
+        }
+        .step .wip-icon {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 1.3rem;
+        }
+        .step .wip-icon svg {
+          width: 54px; height: 54px;
+        }
+        /* ========= Cards Grid ========== */
+        .wip-cards-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2rem;
+          margin: 2rem 0 0 0;
+        }
+        .wip-card {
+          background: #fff;
+          border-radius: 16px;
+          box-shadow: 0 2px 12px #c583f324;
+          padding: 1.4rem 1.2rem;
+          min-width: 220px;
+          min-height: 260px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          margin: 0 auto;
+          transition: box-shadow .2s, transform .18s;
+        }
+        .wip-card h3 {
+          font-size: 1.25rem;
+          color: var(--pink);
+          margin-bottom: 0.6rem;
+          text-align: left;
+          font-weight: 800;
+        }
+        .wip-card h4 {
+          color: var(--purple);
+          font-size: 1.1rem;
+          margin: 1rem 0 .5rem 0;
+          text-align: left;
+        }
+        .wip-card ul,
+        .wip-card p {
+          font-size: 1.05rem;
+          margin-bottom: 0.7rem;
+        }
+        /* Responsive 2 rows (3+2) */
+        .wip-cards-grid > .wip-card:nth-child(n+4) {
+          grid-column: span 1;
+        }
+        .wip-cards-grid {
+          grid-template-rows: repeat(2, minmax(220px, auto));
+        }
+        /* Responsive design */
+        @media (max-width: 900px) {
+          .wip-cards-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 600px) {
+          .wip-cards-grid { grid-template-columns: 1fr; }
+        }
+        /* Footer */
+        footer { margin-top: 2.5rem;}
+    </style>
+</head>
+<body>
+<!-- Header + Navigation -->
+<header class="site-header">
+    <div class="container header-container">
+        <a href="index.html" class="logo">
+            <img src="img/logos/logo-wie.png" alt="IEEE WIE UPRM Logo">
+        </a>
+        <nav class="main-nav">
+            <ul class="nav-links" id="nav-links">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item dropdown">
+                <a href="about.html" class="nav-link">About Us</a>
+                <ul class="dropdown-menu">
+                    <li><a href="board.html"      class="dropdown-link">Directive Board</a></li>
+                    <li><a href="star.html"       class="dropdown-link">STAR Program</a></li>
+                    <li><a href="wip.html"        class="dropdown-link">Women In Power</a></li>
+                    <li><a href="flordemaga.html" class="dropdown-link">Flor de Maga</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+            <li class="nav-item"><a href="sponsors.html" class="nav-link">Sponsors</a></li>
+            <li class="nav-item dropdown">
+                <a href="contact.html" class="nav-link">Contact Us</a>
+                <ul class="dropdown-menu">
+                    <li><a href="contact.html" class="dropdown-link">Contact Form</a></li>
+                    <li><a href="faq.html" class="dropdown-link">Frequently Asked Questions</a></li>
+                </ul>
+            </li>
+            </ul>
+            <form class="search-form" action="search.html" method="get" role="search">
+                <input type="text" name="q" placeholder="Search…" aria-label="Search">
+                <button type="submit" aria-label="Submit search">🔍</button>
+            </form>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero Banner -->
+<section class="wip-hero">
+    <h1>Women In Power</h1>
+    <h2>IEEE Power &amp; Energy Society – Western Puerto Rico</h2>
+</section>
+
+<main class="container">
+
+    <!-- About Us Section -->
+    <section id="pes-about">
+        <h3>About Us</h3>
+        <p style="max-width:800px; margin:0 auto 1.2rem auto; text-align:center;">
+            We are the student chapter of the association known as IEEE Power & Energy Society, better known as IEEE PES. We are the only power-specialized association at the University of Puerto Rico, Mayagüez campus.
+        </p>
+        <ul style="display:flex;flex-wrap:wrap;gap:1.7rem;justify-content:center;max-width:600px;margin:0 auto 1.2rem auto;">
+            <li>Generation</li>
+            <li>Transmission</li>
+            <li>Distribution</li>
+            <li>Renewable Energy</li>
+            <li>Protections</li>
+            <li>Energy Education</li>
+        </ul>
+        <p style="max-width:850px; margin:0 auto; text-align:center;">
+            We aim to address and highlight crucial issues in the power world to develop and prepare our members in the best possible way for reality. We organize activities and provide opportunities for the professional and technical development of our members through projects, workshops, conferences, and more!
+        </p>
+    </section>
+
+    <!-- Initiatives -->
+    <section id="initiatives">
+        <div style="display:flex;justify-content:center;">
+            <div class="wip-card" style="background:#fff8fc;">
+                <h3 style="color:var(--pink);">Our Initiatives</h3>
+                <ul>
+                    <li>Proyecto Luz Verde</li>
+                    <li>AEROPOWER</li>
+                    <li>EmpoWer by Women in Power</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Sequence: PES → WIP → EmpoWer -->
+    <section id="core-sequence">
+        <div class="sequence" id="sequence">
+            <!-- Step 1: PES -->
+            <div class="step" id="step-0">
+                <div class="wip-icon">
+                    <!-- PES Icon -->
+                    <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="28" stroke="#652d76" stroke-width="3"/><path d="M32 20v12l10 6" stroke="#ff66c4" stroke-width="3" stroke-linecap="round"/></svg>
+                </div>
+                <h3>IEEE PES (Power &amp; Energy Society)</h3>
+                <p>An entity comprised of women whose stories and positions in the industry help demonstrate the success anyone can achieve through dedication. This leadership team is supported by mentors and role models who share their inspiring stories. It fosters more diverse leadership by promoting professional development, creating connections, and educating women in the energy industry. Our goal is not only to increase the number of women in the energy industry but also to guide them towards holding leadership positions!</p>
+            </div>
+            <!-- Step 2: WIP -->
+            <div class="step" id="step-1">
+                <div class="wip-icon">
+                    <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="28" stroke="#ff66c4" stroke-width="3"/><path d="M20 40c2-8 8-14 12-16" stroke="#652d76" stroke-width="3" stroke-linecap="round"/></svg>
+                </div>
+                <h3>Women In Power (WIP)</h3>
+                <p>Developing candidates for leadership positions through recognition and leadership education. Providing inspiration and education through mentors, role models, and success stories. Establishing support among institutions to provide opportunities for candidates in leadership positions.</p>
+            </div>
+            <!-- Step 3: EmpoWer -->
+            <div class="step" id="step-2">
+                <div class="wip-icon">
+                    <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="28" stroke="#da8fff" stroke-width="3"/><path d="M32 24v16" stroke="#ff66c4" stroke-width="3" stroke-linecap="round"/><path d="M24 32h16" stroke="#652d76" stroke-width="3" stroke-linecap="round"/></svg>
+                </div>
+                <h3>Women in Power – EmpoWer</h3>
+                <p>EmpoWer is the research project created by IEEE PES – WIP UPRM with the goal to develop a Solar Heater with recyclable materials and Solar Powered Water Purifier for a school in Culebra, Puerto Rico.</p>
+                <ul>
+                    <li>Established in January 2023.</li>
+                    <li>20+ young women from different engineering departments and the business administration department.</li>
+                </ul>
+            </div>
+            <!-- Controls -->
+            <div class="seq-controls">
+                <button class="seq-btn" id="prev-btn">Prev</button>
+                <button class="seq-btn" id="next-btn">Next</button>
+            </div>
+            <div class="seq-dots">
+                <span class="seq-dot active" data-step="0"></span>
+                <span class="seq-dot" data-step="1"></span>
+                <span class="seq-dot" data-step="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARDS GRID: 3 Up, 2 Down -->
+    <section class="wip-cards-grid">
+        <!-- 1 -->
+        <div class="wip-card">
+            <h3>Mission &amp; Vision</h3>
+            <ul>
+                <li>Developing candidates for leadership positions through recognition and leadership education.</li>
+                <li>Providing inspiration and education through mentors, role models, and success stories.</li>
+                <li>Establishing support among institutions to provide opportunities for candidates in leadership positions.</li>
+            </ul>
+        </div>
+        <!-- 2 -->
+        <div class="wip-card">
+            <h3>Team</h3>
+            <ul>
+                <li>Project Manager</li>
+                <li>Administrative Team</li>
+                <li>Business Team</li>
+                <li>3 Technical Divisions:
+                    <ul>
+                        <li>Water Filtration System Team</li>
+                        <li>Structure Team</li>
+                        <li>Solar Team</li>
+                    </ul>
+                </li>
+                <li>Company Mentor &amp; Sponsor of WIP &amp; WIE: Sargent &amp; Lundy Puerto Rico</li>
+            </ul>
+        </div>
+        <!-- 3 -->
+        <div class="wip-card">
+            <h3>WIP Pillars</h3>
+            <ul>
+                <li><strong>Community</strong> - Seminars and panel discussions to promote professional development and teamwork skills.</li>
+                <li><strong>Education</strong> - Leadership guidance and opportunities tailored to experience level in the industry.</li>
+                <li><strong>Leadership</strong> - Various leadership opportunities offered and applied in other organizations.</li>
+            </ul>
+        </div>
+        <!-- 4 -->
+        <div class="wip-card">
+            <h3>Benefits</h3>
+            <ul>
+                <li><strong>Mentorship</strong> – Find mentorship from experienced colleagues for advice and guidance.</li>
+                <li><strong>Role Models</strong> – Showcases stories of successful women in leadership for inspiration.</li>
+                <li><strong>Networking</strong> – Learn social skills to create and leverage networks of contacts.</li>
+            </ul>
+        </div>
+        <!-- 5 -->
+        <div class="wip-card">
+            <h3>WIP Project</h3>
+            <h4>Solar Water Heater with Recyclable Materials</h4>
+            <ul>
+                <li>Research on solar thermal panels</li>
+                <li>Investigate the relationship between power and heat</li>
+                <li>Create a prototype to generate clean energy</li>
+            </ul>
+            <h4>Solar-Powered Water Purifier</h4>
+            <ul>
+                <li>Research on sustainable water quality and purification</li>
+                <li>Create a prototype to provide potable water</li>
+            </ul>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="container"><p>&copy; 2025 IEEE Women in Engineering UPRM Student Branch. All rights reserved.</p></div>
+</footer>
+
+<script>
+    // Sequence JS
+    document.addEventListener('DOMContentLoaded', () => {
+      const steps = document.querySelectorAll('.step');
+      const dots = document.querySelectorAll('.seq-dot');
+      let current = 0;
+      const showStep = i => {
+        steps.forEach((s, idx) => s.classList.toggle('active', idx === i));
+        dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
+      };
+      showStep(current);
+      document.getElementById('prev-btn').addEventListener('click', () => {
+        current = (current - 1 + steps.length) % steps.length;
+        showStep(current);
+      });
+      document.getElementById('next-btn').addEventListener('click', () => {
+        current = (current + 1) % steps.length;
+        showStep(current);
+      });
+      dots.forEach((dot, idx) => {
+        dot.addEventListener('click', () => {
+          current = idx;
+          showStep(current);
+        });
+      });
+      // Menu toggle
+      document.getElementById('menu-toggle').addEventListener('click', () => {
+        document.getElementById('nav-links').classList.toggle('open');
+      });
+    });
+</script>
+</body>
+</html>

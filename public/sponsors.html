@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WIE UPRM – Sponsors</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        body {
+            background: var(--bg-light, #f9f0fa);
+            color: var(--text, #333);
+        }
+        main.container {
+            padding-bottom: 2rem;
+        }
+        /* Big main title */
+        .main-title {
+          text-align: center;
+          font-size: 2.8rem;
+          color: var(--purple, #652d76);
+          margin: 2.5rem 0 1.2rem 0;
+          letter-spacing: 1.5px;
+          font-weight: 800;
+          text-shadow: 0 4px 24px #ba6be680, 0 1px 2px #fff2;
+        }
+        .section-title {
+          text-align: center;
+          color: var(--purple, #652d76);
+          font-size: 2rem;
+          margin-bottom: .2rem;
+          margin-top: 2.5rem;
+          font-weight: 700;
+          letter-spacing: 1.2px;
+          position: relative;
+        }
+        .section-title:after {
+          content: "";
+          display: block;
+          width: 80px;
+          height: 3px;
+          background: var(--pink, #ff66c4);
+          margin: 0.5rem auto 0;
+          border-radius: 2px;
+        }
+        .section-desc {
+          text-align: center;
+          max-width: 650px;
+          margin: 0.5rem auto 2rem auto;
+          color: #555;
+          font-size: 1.18rem;
+          line-height: 1.6;
+        }
+        /* Carousel base styles */
+        .carousel {
+          position: relative;
+          overflow: visible;
+          margin: 2.2rem auto 2rem auto;
+          max-width: 820px;
+          min-height: 280px;
+        }
+        .carousel .slides {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+        }
+        .carousel .slide {
+          display: none;
+          background: #fffdfa;
+          border-radius: 16px;
+          box-shadow: 0 2px 14px rgba(130,0,180,0.10), 0 1.5px 8px rgba(150,60,190,0.08);
+          padding: 2.3rem 2.2rem;
+          margin: 0 auto;
+          max-width: 780px;
+          min-height: 230px;
+          font-size: 1.18rem;
+          text-align: center;
+          transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .carousel .slide.active,
+        .carousel .slide:hover {
+          box-shadow: 0 4px 24px rgba(110,10,120,0.18);
+          transform: scale(1.02);
+        }
+        .carousel .slide h1,
+        .carousel .slide h2,
+        .carousel .slide h3,
+        .carousel .slide h4 {
+          margin-top: 0;
+          text-align: center;
+          color: var(--purple);
+          margin-bottom: 0.5rem;
+        }
+        .carousel .slide h1 { font-size: 2.1rem; }
+        .carousel .slide h2, .carousel .slide h3 { font-size: 1.5rem; }
+        .carousel .slide h4 { font-size: 1.18rem; color: var(--pink); }
+        .carousel .slide ul {
+          margin: 1.1rem auto 0.5rem auto;
+          text-align: left;
+          display: inline-block;
+        }
+        .carousel .slide li {
+          margin-bottom: 0.45rem;
+        }
+        .carousel-btn {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: var(--pink);
+          border: none;
+          color: #fff;
+          font-size: 2.1rem;
+          padding: 0.65rem 1.1rem 0.6rem 1.1rem;
+          cursor: pointer;
+          border-radius: 50%;
+          z-index: 4;
+          transition: background 0.18s, box-shadow 0.15s;
+          box-shadow: 0 2px 12px #fc7ac14f;
+        }
+        .carousel-btn.prev { left: -45px; }
+        .carousel-btn.next { right: -45px; }
+        .carousel-btn:hover {
+          background: var(--purple);
+          color: #fff;
+        }
+        @media (max-width: 900px) {
+          .carousel, .carousel .slide { max-width: 99vw;}
+          .carousel-btn.prev { left: 4px; }
+          .carousel-btn.next { right: 4px; }
+        }
+        @media (max-width: 600px) {
+          .main-title { font-size: 2rem;}
+          .carousel .slide {
+            padding: 1rem 0.5rem;
+            font-size: 1rem;
+          }
+        }
+    </style>
+</head>
+<body>
+<!-- Header + Navigation -->
+<header class="site-header">
+    <div class="container header-container">
+        <a href="index.html" class="logo">
+            <img src="img/logos/logo-wie.png" alt="IEEE WIE UPRM Logo">
+        </a>
+        <nav class="main-nav">
+            <ul class="nav-links" id="nav-links">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item dropdown">
+                <a href="about.html" class="nav-link">About Us</a>
+                <ul class="dropdown-menu">
+                    <li><a href="board.html"      class="dropdown-link">Directive Board</a></li>
+                    <li><a href="star.html"       class="dropdown-link">STAR Program</a></li>
+                    <li><a href="wip.html"        class="dropdown-link">Women In Power</a></li>
+                    <li><a href="flordemaga.html" class="dropdown-link">Flor de Maga</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+            <li class="nav-item"><a href="sponsors.html" class="nav-link active">Sponsors</a></li>
+            <li class="nav-item dropdown">
+                <a href="contact.html" class="nav-link">Contact Us</a>
+                <ul class="dropdown-menu">
+                    <li><a href="contact.html" class="dropdown-link">Contact Form</a></li>
+                    <li><a href="faq.html" class="dropdown-link">Frequently Asked Questions</a></li>
+                </ul>
+            </li>
+            </ul>
+            <form class="search-form" action="search.html" method="get" role="search">
+                <input type="text" name="q" placeholder="Search…" aria-label="Search">
+                <button type="submit" aria-label="Submit search">🔍</button>
+            </form>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="container">
+    <!-- Why Sponsor -->
+    <section id="why-sponsor" style="padding: 2.2rem 0 0.5rem 0;">
+        <h1 class="main-title">WHY SPONSOR IEEE WIE UPRM STUDENT BRANCH?</h1>
+        <h2 class="section-title">STEM Diversity in IEEE Membership</h2>
+        <div class="section-desc">
+            Our membership in the university is truly diverse with members enrolled in different engineering disciplines such as computer, electrical, software, chemical, mechanical, industrial, and civil engineering. Computer and Electrical Engineering students make up most of our members. In addition, we also have members from other disciplines such as physics, mathematics, biology, and biotechnology.
+        </div>
+    </section>
+
+    <!-- STAR Program -->
+    <section id="star-program" style="padding: 2rem 0 0.7rem 0;">
+        <h2 class="section-title">STAR PROGRAM</h2>
+        <div class="section-desc">
+            <b>Ignite your curiosity.</b><br>
+            The IEEE Student-Teacher and Research Engineer/Scientist (STAR) Program was developed to address the growing concern that, at a young age, girls are discouraged from STEM careers. The IEEE WIE UPRM Student Branch have a commitment to encourage girls and anyone in Puerto Rico to pursue careers in STEM for the work field to become more diverse and inclusive.
+            <br><br>
+            The STAR Program consists of pre-university outreach activities. Our student branch organizes two mass activities per year: UPRM Engineering Department Seminars and UPRM Engineering Department Workshops.
+        </div>
+    </section>
+
+    <!-- Community Service -->
+    <section id="community-service" style="padding: 2rem 0 1.2rem 0;">
+        <h2 class="section-title">COMMUNITY SERVICE</h2>
+        <div class="section-desc">
+            Our student branch is fully committed to our community, which is why we organize events to foster our members’ sense of community and empathy. Some of the activities we coordinate include beach clean-ups, breakfast for people in need, food drives, fundraising for humanitarian relief, and Relay for Life.
+        </div>
+    </section>
+
+    <!-- Sponsor Benefits Carousel -->
+    <section id="sponsor-benefits">
+        <h2 class="section-title">SPONSOR BENEFITS</h2>
+        <div class="carousel" id="tiers-carousel">
+            <ul class="slides">
+                <li class="slide">
+                    <h3>Gold – $1,000</h3>
+                    <h4>Benefits</h4>
+                    <ul style="list-style: disc; padding-left: 2rem; display:inline-block; text-align:left;">
+                        <li>Access to our Resume Book</li>
+                        <li>Use of the IEEE Lounge Room and Office for activities and interviews</li>
+                        <li>Seminars/Workshops featuring your company</li>
+                        <li>Logo of the company on WIE shirts and website</li>
+                    </ul>
+                </li>
+                <li class="slide">
+                    <h3>Silver – $500</h3>
+                    <h4>Benefits</h4>
+                    <ul style="list-style: disc; padding-left: 2rem; display:inline-block; text-align:left;">
+                        <li>Access to our Resume Book</li>
+                        <li>Use of the IEEE Lounge Room and Office for activities and interviews</li>
+                        <li>Seminars/Workshops featuring your company</li>
+                    </ul>
+                </li>
+                <li class="slide">
+                    <h3>Bronze – $250</h3>
+                    <h4>Benefits</h4>
+                    <ul style="list-style: disc; padding-left: 2rem; display:inline-block; text-align:left;">
+                        <li>Access to our Resume Book</li>
+                        <li>Seminars/Workshops featuring your company</li>
+                    </ul>
+                </li>
+            </ul>
+            <button class="carousel-btn prev" data-carousel="tiers-carousel">❮</button>
+            <button class="carousel-btn next" data-carousel="tiers-carousel">❯</button>
+        </div>
+    </section>
+
+    <!-- Our Sponsors Carousel -->
+    <section id="our-sponsors">
+        <h2 class="section-title">OUR SPONSORS</h2>
+        <div class="carousel" id="sponsors-carousel">
+            <ul class="slides">
+                <li class="slide">
+                    <h3>Sargent &amp; Lundy</h3>
+                    <p>One of the world’s longest-standing full-service architect engineering firms. Founded in 1891, the firm is a global leader in power, energy, and decarbonization with expertise in grid modernization, renewable energy, energy storage, nuclear power, fossil power, carbon capture, and hydrogen. Sargent &amp; Lundy delivers comprehensive project services – from consulting, design, and implementation to construction management, commissioning, and operations/maintenance – with an emphasis on quality and safety. The firm serves public and private clients in the power, energy, gas distribution, industrial, and government sectors.</p>
+                </li>
+                <li class="slide">
+                    <h3>L3Harris</h3>
+                    <p><strong>MOVING FAST REQUIRES TRUST, MOVING FORWARD REQUIRES DISRUPTION</strong><br>
+                        As the Trusted Disruptor in defense, we’re strengthening our trusted position as an industry-leading merchant supplier, and we’re strengthening our customers’ positions with rapid, innovative solutions only a disruptive prime can deliver.</p>
+                    <h4>THE VALUES THAT DEFINE US</h4>
+                    <ul style="list-style: disc; padding-left: 2rem; display:inline-block; text-align:left;">
+                        <li><strong>Integrity</strong> – Our decisions and actions are based on ethical, honest and accountable practices.</li>
+                        <li><strong>Excellence</strong> – We perform at the highest levels through flawless execution, customer focus and constant innovation.</li>
+                        <li><strong>Respect</strong> – We tackle every challenge with a sustainable, community-minded and inclusive approach.</li>
+                    </ul>
+                </li>
+                <li class="slide">
+                    <h3>Merck</h3>
+                    <p><strong>Our purpose:</strong> We use the power of leading-edge science to save and improve lives around the world.</p>
+                    <p>For more than 130 years, we have brought hope to humanity through the development of important medicines and vaccines. We aspire to be the premier research-intensive biopharmaceutical company in the world — and today, we are at the forefront of research to deliver innovative health solutions that advance the prevention and treatment of diseases in people and animals. We foster a diverse and inclusive global workforce and operate responsibly every day to enable a safe, sustainable and healthy future for all people and communities.</p>
+                </li>
+            </ul>
+            <button class="carousel-btn prev" data-carousel="sponsors-carousel">❮</button>
+            <button class="carousel-btn next" data-carousel="sponsors-carousel">❯</button>
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>&copy; 2025 IEEE Women in Engineering UPRM Student Branch. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      function setupCarousel(id) {
+        const carousel = document.getElementById(id);
+        const slides = carousel.querySelectorAll('.slide');
+        let current = 0;
+        function show(index) {
+          slides.forEach((s, i) => {
+            s.style.display = i === index ? 'block' : 'none';
+            if(i === index) s.classList.add('active'); else s.classList.remove('active');
+          });
+        }
+        show(current);
+        carousel.querySelector('.prev').addEventListener('click', () => {
+          current = (current - 1 + slides.length) % slides.length;
+          show(current);
+        });
+        carousel.querySelector('.next').addEventListener('click', () => {
+          current = (current + 1) % slides.length;
+          show(current);
+        });
+      }
+      setupCarousel('tiers-carousel');
+      setupCarousel('sponsors-carousel');
+    });
+    // Hamburger
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    });
+</script>
+</body>
+</html>

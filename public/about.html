@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>WIE UPRM – About Us</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        <!-- Only for Mission/Vision tabs and more-about-us cards -->
+        .mv-tabs {
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+          margin: 2rem 0 1rem;
+        }
+        .mv-tabs button {
+          padding: 0.5rem 1rem;
+          border: none;
+          background: var(--accent2);
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 1.1rem;
+        }
+        .mv-tabs button.active {
+          background: var(--purple);
+          color: #fff;
+        }
+        .mv-content {
+          max-width: 800px;
+          margin: 0 auto 2rem;
+          line-height: 1.6;
+          display: none;
+        }
+        .mv-content.active {
+          display: block;
+        }
+        .mv-content h2 {
+          text-align: center;
+          color: var(--purple);
+          margin-bottom: 1rem;
+          font-size: 2rem;
+        }
+
+        #more-about-us {
+          background: var(--bg-light);
+          padding: 3rem 1rem;
+        }
+        #more-about-us h2 {
+          text-align: center;
+          font-size: 2rem;
+          color: var(--purple);
+          margin-bottom: 2rem;
+        }
+        .more-cards {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 2rem;
+        }
+        .more-card {
+          background: #fff;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+          padding: 1.5rem;
+          width: 280px;
+          text-align: center;
+        }
+        .more-card h3 {
+          font-size: 1.4rem;
+          margin-bottom: 0.5rem;
+          color: var(--text);
+        }
+        .more-card p {
+          font-size: 1rem;
+          margin-bottom: 1rem;
+          color: var(--text);
+          line-height: 1.5;
+        }
+        .more-card .btn {
+          font-size: 1rem;
+          padding: 0.5rem 1rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header + UNIVERSAL Navigation -->
+<header class="site-header">
+    <div class="container header-container">
+        <a href="index.html" class="logo">
+            <img src="img/logos/logo-wie.png" alt="IEEE WIE UPRM Logo">
+        </a>
+        <nav class="main-nav">
+            <ul class="nav-links" id="nav-links">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item dropdown">
+                <a href="about.html" class="nav-link active">About Us</a>
+                <ul class="dropdown-menu">
+                    <li><a href="board.html"      class="dropdown-link">Directive Board</a></li>
+                    <li><a href="star.html"       class="dropdown-link">STAR Program</a></li>
+                    <li><a href="wip.html"        class="dropdown-link">Women In Power</a></li>
+                    <li><a href="flordemaga.html" class="dropdown-link">Flor de Maga</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+            <li class="nav-item"><a href="sponsors.html" class="nav-link">Sponsors</a></li>
+            <li class="nav-item dropdown">
+                <a href="contact.html" class="nav-link">Contact Us</a>
+                <ul class="dropdown-menu">
+                    <li><a href="contact.html" class="dropdown-link">Contact Form</a></li>
+                    <li><a href="faq.html" class="dropdown-link">Frequently Asked Questions</a></li>
+                </ul>
+            </li>
+            </ul>
+            <form class="search-form" action="search.html" method="get" role="search">
+                <input type="text" name="q" placeholder="Search…" aria-label="Search">
+                <button type="submit" aria-label="Submit search">🔍</button>
+            </form>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </div>
+</header>
+
+<!-- Main content -->
+<main class="container">
+    <!-- Intro paragraphs -->
+    <section id="about-intro">
+        <h2>IEEE’s Women in Engineering Affinity Group at UPRM</h2>
+        <p>IEEE Women in Engineering (WIE) is a global network of IEEE members and volunteers dedicated to promoting women engineers and scientists. The Women in Engineering IEEE Student Branch at the University of Mayagüez (WIE UPRM) was founded in September 2005 by an interdisciplinary group of students that wanted to inspire more women in their community to pursue a career in engineering or sciences. As a student organization, we are devoted to fostering a space within our campus where our student members can find the inspiration, motivation &amp; encouragement they might need to further develop as leaders &amp; future professionals in their respective fields. We additionally aim to educate high school students about careers in engineering with our STAR program as well as all the opportunities that may come with pursuing such a career.</p>
+        <p>The affinity group, IEEE’s Women in Engineering, is the largest international professional organization dedicated to supporting women in the fields of technology and science. Our members include both women and men dedicated to inspiring and motivating both current engineering students and high school students.</p>
+        <p>In this page, you will find more information about our group, our activities and how to contact us.</p>
+        <p>Interested in joining us? Visit our membership page for more details.</p>
+    </section>
+
+    <!-- Mission/Vision tabs -->
+    <div class="mv-tabs">
+        <button class="active" data-target="mission">Mission</button>
+        <button data-target="vision">Vision</button>
+    </div>
+    <section id="mission" class="mv-content active">
+        <h2>Mission</h2>
+        <p>Our mission is to encourage and inspire women to develop STEM careers and support our members by providing technical and professional development through seminars, workshops, and social activities. We take it upon ourselves to find and offer opportunities to support our main objective through collaborations with other organizations as well.</p>
+    </section>
+    <section id="vision" class="mv-content">
+        <h2>Vision</h2>
+        <p>We envision a community of women engineers and scientists that will be productive in their work environment and society, focusing on technical development, professional networking, and active engagement in their community as well as personal growth. It is our goal to develop elite women that strive to be the best at what they do, providing a unique vision that not only contributes to the advancement of technology but provides diversity in the work field.</p>
+    </section>
+
+    <!-- Objectives list -->
+    <section id="objectives">
+        <h2>Objectives</h2>
+        <ul>
+            <li>Encourage and inspire high school students to pursue an engineering career through the STAR Program.</li>
+            <li>Increase the growth and diversification of women pursuing engineering degrees where they are strongly underrepresented.</li>
+            <li>Help our members develop their social, technical, and professional skills through various activities.</li>
+            <li>Create a sense of community within the organization through community service activities.</li>
+        </ul>
+    </section>
+</main>
+
+<!-- More about us -->
+<section id="more-about-us">
+    <h2>More about us</h2>
+    <div class="more-cards">
+        <a href="https://wie.ieee.org" class="more-card" target="_blank">
+            <h3>The Professional Branch</h3>
+            <p>IEEE WIE UPRM is an affinity group of IEEE WIE. You can find out more information through their website!</p>
+        </a>
+        <a href="board.html" class="more-card">
+            <h3>Our Directive Board</h3>
+            <p>Find out more about the team leading the student branch!</p>
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>&copy; 2025 IEEE Women in Engineering UPRM Student Branch. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+    // Tab switching for Mission/Vision
+    document.querySelectorAll('.mv-tabs button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelector('.mv-tabs .active').classList.remove('active');
+        btn.classList.add('active');
+        document.querySelectorAll('.mv-content').forEach(sec => sec.classList.remove('active'));
+        document.getElementById(btn.dataset.target).classList.add('active');
+      });
+    });
+    // Mobile nav
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      document.getElementById('nav-links').classList.toggle('open');
+    });
+</script>
+</body>
+</html>
