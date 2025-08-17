@@ -23,15 +23,20 @@ jobs:
       - name: Build events.json from ICS
         env:
           ICS_URL: ${{ secrets.ICS_URL }}
+          PAST_DAYS: "0"
+          FUTURE_DAYS: "300"
         run: |
           node scripts/build-events.js
+          echo "---- Preview ----"
+          wc -c docs/data/events.json || true
+          head -n 30 docs/data/events.json || true
 
       - name: Commit changes (if any)
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
-            git config user.name "github-actions[bot]"
+            git config user.name  "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data/events.json
+            git add docs/data/events.json
             git commit -m "chore(events): auto-update events.json from ICS"
             git push
           else

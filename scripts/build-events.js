@@ -1,87 +1,95 @@
 // scripts/build-events.js
-// Lee un .ics público y genera data/events.json con próximos eventos.
+// Convierte un .ics público a docs/data/events.json (compatible con tus index/events)
 
 const fs = require('fs');
-const path = require('path');
 const https = require('https');
-const { parseICS } = require('./ics-lite');
 
-// === CONFIG ===
-const ICS_URL  = process.env.ICS_URL;     // viene del Action
-const OUT_FILE = path.join(process.cwd(), 'data', 'events.json');
-const MAX_EVENTS = 30;
+const ICS_URL = process.env.ICS_URL || 'https://calendar.google.com/calendar/ical/wie%40uprm.edu/public/basic.ics';
+const PAST_DAYS   = parseInt(process.env.PAST_DAYS  || '30', 10);   // 30 días hacia atrás
+const FUTURE_DAYS = parseInt(process.env.FUTURE_DAYS || '400', 10);  // ~13 meses hacia adelante
 
-// Convierte YYYYMMDD o YYYYMMDDTHHMMSSZ a ISO Z
-function toISO(raw) {
-  if (!raw) return null;
-  const s = String(raw).trim();
-  if (/^\d{8}$/.test(s)) { // all-day
-    const y = s.slice(0, 4);
-    const m = s.slice(4, 6);
-    const d = s.slice(6, 8);
-    return { iso: `${y}-${m}-${d}T00:00:00Z`, allDay: true };
-  }
-  if (/^\d{8}T\d{6}Z$/.test(s)) {
-    const y = s.slice(0, 4);
-    const m = s.slice(4, 6);
-    const d = s.slice(6, 8);
-    const hh = s.slice(9, 11);
-    const mm = s.slice(11, 13);
-    const ss = s.slice(13, 15);
-    return { iso: `${y}-${m}-${d}T${hh}:${mm}:${ss}Z`, allDay: false };
-  }
-  return { iso: s, allDay: false }; // fallback
-}
+const since = new Date(); since.setDate(since.getDate() - PAST_DAYS);
+const until = new Date(); until.setDate(until.getDate() + FUTURE_DAYS);
 
-function fetchICS(url) {
+function fetch(url) {
   return new Promise((resolve, reject) => {
     https.get(url, res => {
-      if (res.statusCode !== 200) {
-        reject(new Error('HTTP ' + res.statusCode));
-        return;
-      }
+      if (res.statusCode !== 200) return reject(new Error('HTTP ' + res.statusCode));
       let data = '';
-      res.on('data', chunk => (data += chunk.toString('utf8')));
+      res.on('data', d => data += d.toString('utf8'));
       res.on('end', () => resolve(data));
     }).on('error', reject);
   });
 }
 
+// parseo .ics simple con soporte a all-day y con hora (Z)
+function parseICal(ics) {
+  const lines = ics.replace(/\r\n/g, '\n').split('\n').reduce((acc, l) => {
+    if (l.startsWith(' ') || l.startsWith('\t')) acc[acc.length - 1] += l.slice(1);
+    else acc.push(l);
+    return acc;
+  }, []);
+  const events = [];
+  let cur = null;
+
+  for (const l of lines) {
+    if (l === 'BEGIN:VEVENT') cur = {};
+    else if (l === 'END:VEVENT') { if (cur) events.push(cur); cur = null; }
+    else if (cur) {
+      const [rawKey, ...rest] = l.split(':');
+      if (!rawKey || rest.length === 0) continue;
+      const value = rest.join(':').trim();
+      const [key, ...params] = rawKey.split(';');
+
+      if (key === 'SUMMARY') cur.summary = value;
+      if (key === 'DESCRIPTION') cur.description = value;
+      if (key === 'LOCATION') cur.location = value;
+      if (key === 'URL') cur.url = value;
+
+      if (key === 'DTSTART' || key === 'DTEND') {
+        const allDay = params.some(p => p.toUpperCase().includes('VALUE=DATE'));
+        const dt = parseDate(value, allDay);
+        if (key === 'DTSTART') { cur.start = dt.toISOString(); cur.allDay = allDay; }
+        else cur.end = dt.toISOString();
+      }
+    }
+  }
+  return events;
+}
+
+function parseDate(v, allDay) {
+  if (allDay || /^\d{8}$/.test(v)) {
+    const y = +v.slice(0,4), m = +v.slice(4,6)-1, d = +v.slice(6,8);
+    // all-day → a medianoche UTC
+    return new Date(Date.UTC(y, m, d, 0, 0, 0));
+  }
+  const m = v.match(/^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})(Z)?$/);
+  if (m) {
+    const [,Y,Mo,D,h,mi,s,z] = m;
+    if (z === 'Z') return new Date(Date.UTC(+Y, +Mo-1, +D, +h, +mi, +s));
+    return new Date(+Y, +Mo-1, +D, +h, +mi, +s);
+  }
+  return new Date(v);
+}
+
+function inWindow(ev) {
+  const start = new Date(ev.start);
+  return start >= since && start <= until;
+}
+
 (async () => {
   try {
-    if (!ICS_URL) {
-      console.error('❌ Falta ICS_URL (variable de entorno).');
-      process.exit(1);
-    }
+    console.log('⬇️  ICS:', ICS_URL);
+    const ics = await fetch(ICS_URL);
+    let events = parseICal(ics).filter(inWindow).sort((a,b) => new Date(a.start) - new Date(b.start));
+    events = events.slice(0, 150);
 
-    const icsText = await fetchICS(ICS_URL);
-    const items = parseICS(icsText)
-      .filter(e => e.type === 'VEVENT')
-      .map(e => {
-        const dtStart = toISO(e.fields['DTSTART']);
-        const dtEnd   = toISO(e.fields['DTEND']);
-        return {
-          uid: e.fields['UID'] || null,
-          title: e.fields['SUMMARY'] || 'Untitled',
-          description: e.fields['DESCRIPTION'] || '',
-          location: e.fields['LOCATION'] || '',
-          start: dtStart ? dtStart.iso : null,
-          end: dtEnd ? dtEnd.iso : null,
-          allDay: dtStart ? dtStart.allDay : false
-        };
-      })
-      // solo futuros (o de hoy)
-      .filter(ev => !ev.start || new Date(ev.start) >= new Date(new Date().toDateString()))
-      // ordena por fecha
-      .sort((a, b) => new Date(a.start || 0) - new Date(b.start || 0))
-      .slice(0, MAX_EVENTS);
-
-    fs.mkdirSync(path.dirname(OUT_FILE), { recursive: true });
-    fs.writeFileSync(OUT_FILE, JSON.stringify(items, null, 2));
-
-    console.log(`✅ Generado ${OUT_FILE} con ${items.length} eventos`);
-  } catch (err) {
-    console.error('❌ Error generando events.json:', err);
+    const outDir = 'docs/data';
+    fs.mkdirSync(outDir, { recursive: true });
+    fs.writeFileSync(`${outDir}/events.json`, JSON.stringify(events, null, 2));
+    console.log(`✅ docs/data/events.json generado con ${events.length} eventos`);
+  } catch (e) {
+    console.error('Error:', e.message);
     process.exit(1);
   }
 })();
