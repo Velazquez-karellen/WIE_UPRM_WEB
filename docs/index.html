@@ -12,13 +12,9 @@
         .site-header, .site-header *, .site-header .nav-link, .site-header .dropdown-link {
           color: #fff !important;
         }
-        .site-header .dropdown-menu {
-          background: rgba(30,0,40,0.97);
-        }
-        .site-header .dropdown-link:hover {
-          background: var(--pink);
-          color: #fff !important;
-        }
+        .site-header .dropdown-menu { background: rgba(30,0,40,0.97); }
+        .site-header .dropdown-link:hover { background: var(--pink); color: #fff !important; }
+
         .hero h1, .hero p, .hero .btn, .hero .btn.outline, .hero a {
           color: #fff !important;
           text-shadow: 1px 2px 12px rgba(60,0,70,0.18);
@@ -35,12 +31,9 @@
           text-shadow: none;
           transition: background 0.2s, color 0.2s, border-color 0.2s;
         }
-        .hero .btn:hover, .hero .btn.outline:hover {
-          background: var(--pink);
-          border-color: var(--pink);
-          color: #fff !important;
-        }
-        /* --- Search input field: color universal --- */
+        .hero .btn:hover, .hero .btn.outline:hover { background: var(--pink); border-color: var(--pink); color: #fff !important; }
+
+        /* --- Search input universal --- */
         .search-form input[type="text"],
         .search-form input[type="search"] {
           background: #fff;
@@ -56,7 +49,8 @@
           border-color: var(--purple);
           background: #f8e9ff;
         }
-        /* HERO section */
+
+        /* HERO */
         .hero {
           position: relative;
           background: url('img/icon-program.jpg') center/cover no-repeat;
@@ -67,28 +61,19 @@
         .hero::after {
           content: '';
           position: absolute;
-          top: 0; left: 0;
-          width: 100%; height: 100%;
+          top: 0; left: 0; width: 100%; height: 100%;
           background: rgba(0,0,0,0.5);
           z-index: 0;
         }
         .hero .container { position: relative; z-index: 1; }
-
         .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
         .hero p { font-size: 1.3rem; margin-bottom: 2rem; }
 
         /* --- Upcoming Events --- */
         #upcoming-events { padding: 2rem 0; }
-        #upcoming-events h2 {
-          text-align: center;
-          margin-bottom: 1rem;
-          color: var(--purple);
-        }
+        #upcoming-events h2 { text-align: center; margin-bottom: 1rem; color: var(--purple); }
         .events-scroll {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 1rem;
+          display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;
         }
         .event-card {
           flex: 0 0 calc(25% - 1rem);
@@ -98,102 +83,54 @@
           box-shadow: 0 2px 8px rgba(0,0,0,0.1);
           padding: 1rem;
           text-align: left;
-          transition: box-shadow .18s;
+          transition: box-shadow .18s, transform .18s;
         }
-        .event-card:hover { box-shadow: 0 4px 20px rgba(120,0,160,0.14);}
+        .event-card:hover { box-shadow: 0 4px 20px rgba(120,0,160,0.14); transform: translateY(-2px); }
         .event-card h4 { margin: .5rem 0; color: var(--purple); }
+        .event-meta { font-size: .95rem; color: #555; margin-bottom: .25rem; }
+        .event-card a { display:inline-block; margin-top:.35rem; }
 
         /* --- Features Cards --- */
         #features { padding: 2rem 0; }
         #features .feature-cards {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-          gap: 1rem;
+          display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1rem;
         }
         .feature-card {
-          background: var(--white);
-          border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-          padding: 1.5rem;
-          text-align: center;
-          transition: box-shadow .16s;
+          background: var(--white); border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+          padding: 1.5rem; text-align: center; transition: box-shadow .16s;
         }
-        .feature-card:hover {
-          box-shadow: 0 4px 18px rgba(120,0,160,0.13);
-        }
+        .feature-card:hover { box-shadow: 0 4px 18px rgba(120,0,160,0.13); }
         .feature-card img { height: 60px; margin-bottom: .75rem; }
         .feature-card h3 { margin: .5rem 0; color: var(--purple); }
 
         /* --- Sponsors Logos --- */
         #sponsors-logos { padding: 2rem 0; text-align: center; }
-        .logo-scroll {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 2rem;
-          flex-wrap: wrap;
-        }
-        .logo-item a img {
-          height: 150px;
-          filter: grayscale(50%);
-          transition: filter .3s;
-        }
+        .logo-scroll { display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap; }
+        .logo-item a img { height: 150px; filter: grayscale(50%); transition: filter .3s; }
         .logo-item a img:hover { filter: none; }
 
         /* --- Testimonial --- */
         #testimonial blockquote {
-          font-style: italic;
-          text-align: center;
-          margin: 2rem auto;
-          max-width: 600px;
-          position: relative;
+          font-style: italic; text-align: center; margin: 2rem auto; max-width: 600px; position: relative;
         }
-        #testimonial cite {
-          display: block;
-          margin-top: 1rem;
-          font-weight: bold;
-          color: var(--purple);
-        }
+        #testimonial cite { display: block; margin-top: 1rem; font-weight: bold; color: var(--purple); }
 
         /* --- Stay Connected --- */
         #stay-connected { text-align: center; padding: 2rem 0; }
         .social-icons-row {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 2rem;
-          margin: 1.5rem 0 0.5rem 0;
+          display: flex; justify-content: center; align-items: center; gap: 2rem; margin: 1.5rem 0 0.5rem 0;
         }
-        .icon-link {
-          display: inline-flex;
-          text-decoration: none;
-        }
+        .icon-link { display: inline-flex; text-decoration: none; }
         .icon-circle {
-          width: 60px;
-          height: 60px;
-          background: #fff;
-          border-radius: 50%;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          box-shadow: 0 1px 4px rgba(0,0,0,0.13);
-          transition: box-shadow 0.2s;
+          width: 60px; height: 60px; background: #fff; border-radius: 50%;
+          display: inline-flex; align-items: center; justify-content: center;
+          box-shadow: 0 1px 4px rgba(0,0,0,0.13); transition: box-shadow 0.2s;
         }
-        .icon-circle img {
-          width: 32px;
-          height: 32px;
-          object-fit: contain;
-        }
-        .icon-link:hover .icon-circle {
-          box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-        }
+        .icon-circle img { width: 32px; height: 32px; object-fit: contain; }
+        .icon-link:hover .icon-circle { box-shadow: 0 2px 8px rgba(0,0,0,0.18); }
 
-        @media(max-width: 1024px) {
-          .event-card { flex: 0 0 45%; }
-        }
-        @media(max-width: 600px) {
-          .event-card { flex: 0 0 95%; }
-        }
+        @media(max-width: 1024px) { .event-card { flex: 0 0 45%; } }
+        @media(max-width: 600px)  { .event-card { flex: 0 0 95%; } }
     </style>
 </head>
 <body>
@@ -206,25 +143,25 @@
         </a>
         <nav class="main-nav">
             <ul class="nav-links" id="nav-links">
-            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-            <li class="nav-item dropdown">
-                <a href="about.html" class="nav-link">About Us</a>
-                <ul class="dropdown-menu">
-                    <li><a href="board.html"      class="dropdown-link">Directive Board</a></li>
-                    <li><a href="star.html"       class="dropdown-link">STAR Program</a></li>
-                    <li><a href="wip.html"        class="dropdown-link">Women In Power</a></li>
-                    <li><a href="flordemaga.html" class="dropdown-link">Flor de Maga</a></li>
-                </ul>
-            </li>
-            <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
-            <li class="nav-item"><a href="sponsors.html" class="nav-link">Sponsors</a></li>
-            <li class="nav-item dropdown">
-                <a href="contact.html" class="nav-link">Contact Us</a>
-                <ul class="dropdown-menu">
-                    <li><a href="contact.html" class="dropdown-link">Contact Form</a></li>
-                    <li><a href="faq.html" class="dropdown-link">Frequently Asked Questions</a></li>
-                </ul>
-            </li>
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="board.html"      class="dropdown-link">Directive Board</a></li>
+                        <li><a href="star.html"       class="dropdown-link">STAR Program</a></li>
+                        <li><a href="wip.html"        class="dropdown-link">Women In Power</a></li>
+                        <li><a href="flordemaga.html" class="dropdown-link">Flor de Maga</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+                <li class="nav-item"><a href="sponsors.html" class="nav-link">Sponsors</a></li>
+                <li class="nav-item dropdown">
+                    <a href="contact.html" class="nav-link">Contact Us</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="contact.html" class="dropdown-link">Contact Form</a></li>
+                        <li><a href="faq.html" class="dropdown-link">Frequently Asked Questions</a></li>
+                    </ul>
+                </li>
             </ul>
             <form class="search-form" action="search.html" method="get" role="search">
                 <input type="text" name="q" placeholder="Search…" aria-label="Search">
@@ -250,25 +187,26 @@
 <!-- Upcoming Events -->
 <section id="upcoming-events" class="container">
     <h2>Upcoming Events</h2>
-    <div class="events-scroll">
+    <div class="events-scroll" id="events-scroll">
+        <!-- Fallback (se remplaza dinámicamente si fetch OK) -->
         <div class="event-card">
             <h4>Workshop</h4>
-            <p><strong>Date</strong></p>
+            <p class="event-meta"><strong>Date</strong></p>
             <a href="events.html">Details →</a>
         </div>
         <div class="event-card">
             <h4>Workshop</h4>
-            <p><strong>Date</strong></p>
+            <p class="event-meta"><strong>Date</strong></p>
             <a href="events.html">Details →</a>
         </div>
         <div class="event-card">
             <h4>Workshop</h4>
-            <p><strong>Date</strong></p>
+            <p class="event-meta"><strong>Date</strong></p>
             <a href="events.html">Details →</a>
         </div>
         <div class="event-card">
             <h4>Workshop</h4>
-            <p><strong>Date</strong></p>
+            <p class="event-meta"><strong>Date</strong></p>
             <a href="events.html">Details →</a>
         </div>
     </div>
@@ -332,7 +270,7 @@
 <section id="stay-connected" class="container">
     <h2>Stay Connected</h2>
     <div class="social-icons-row">
-        <a href="mailto:wie@uprm.edu"      class="icon-link" aria-label="Send email">
+        <a href="mailto:wie@uprm.edu" class="icon-link" aria-label="Send email">
             <span class="icon-circle"><img src="img/logos/black_wie_logo.png" alt="Email"></span>
         </a>
         <a href="https://www.facebook.com/wie.uprm" target="_blank" class="icon-link" aria-label="Facebook">
@@ -363,9 +301,75 @@
     document.addEventListener('DOMContentLoaded', () => {
       const menuToggle = document.getElementById('menu-toggle');
       const navLinks = document.getElementById('nav-links');
-      menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('open');
-      });
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+      }
+
+      // ======= Upcoming Events (auto) =======
+      // Lee los eventos desde data/events.json, toma los próximos 4 y los pinta.
+      const target = document.getElementById('events-scroll') || document.getElementById('events-scroll') || document.querySelector('.events-scroll');
+
+      async function loadUpcoming() {
+        try {
+          const res = await fetch('data/events.json', { cache: 'no-store' });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          const all = await res.json();
+
+          const now = new Date();
+          // Normaliza fecha inicio; acepta 'start' o 'startDate' en el JSON
+          const events = all
+            .map(e => {
+              const startStr = e.start || e.startDate;
+              const endStr   = e.end   || e.endDate;
+              return {
+                ...e,
+                _start: startStr ? new Date(startStr) : null,
+                _end:   endStr   ? new Date(endStr)   : null
+              };
+            })
+            .filter(e => e._start && e._start >= new Date(now.toDateString())) // hoy o futuro
+            .sort((a,b) => a._start - b._start)
+            .slice(0, 4);
+
+          if (!events.length) return; // deja el fallback si no hay próximos
+
+          // Limpia fallback
+          target.innerHTML = '';
+
+          // Formateador de fecha (si hay hora la mostramos, si es all-day solo fecha)
+          const fmtDate = (date, hasTime) => {
+            if (!date) return '';
+            if (!hasTime) {
+              return date.toLocaleDateString('en-US', { year:'numeric', month:'short', day:'numeric' });
+            }
+            return date.toLocaleString('en-US', {
+              year:'numeric', month:'short', day:'numeric',
+              hour:'numeric', minute:'2-digit'
+            });
+          };
+
+          // Render
+          events.forEach(ev => {
+            const allDay = ev.allDay === true || (ev.start && ev.start.length === 10); // "YYYY-MM-DD"
+            const dateTxt = fmtDate(ev._start, !allDay);
+            const card = document.createElement('div');
+            card.className = 'event-card';
+            card.innerHTML = `
+              <h4>${ev.summary || 'Event'}</h4>
+              <p class="event-meta"><strong>${dateTxt || ''}</strong></p>
+              ${ev.location ? `<p class="event-meta">${ev.location}</p>` : ''}
+              <a href="events.html">Details →</a>
+            `;
+            target.appendChild(card);
+          });
+
+        } catch (err) {
+          // Silencioso: deja el fallback si hay error (CORS, 404, etc.)
+          console.warn('Upcoming events fetch error:', err);
+        }
+      }
+
+      loadUpcoming();
     });
 </script>
 </body>
