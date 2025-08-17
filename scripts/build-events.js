@@ -7,8 +7,8 @@ const https = require('https');
 const ICS_URL = process.env.ICS_URL;
 
 // ventana de tiempo (puedes ajustar también en el workflow)
-const PAST_DAYS   = parseInt(process.env.PAST_DAYS  || '30', 10);
-const FUTURE_DAYS = parseInt(process.env.FUTURE_DAYS || '400', 10);
+const PAST_DAYS   = parseInt(process.env.PAST_DAYS  || '0', 10);
+const FUTURE_DAYS = parseInt(process.env.FUTURE_DAYS || '200', 10);
 
 const since = new Date(); since.setDate(since.getDate() - PAST_DAYS);
 const until = new Date(); until.setDate(until.getDate() + FUTURE_DAYS);
