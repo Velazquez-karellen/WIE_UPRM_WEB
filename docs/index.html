@@ -187,8 +187,9 @@
 <!-- Upcoming Events -->
 <section id="upcoming-events" class="container">
     <h2>Upcoming Events</h2>
+    <!-- El script js/events.js reemplaza el contenido de este contenedor con cards horizontales -->
     <div class="events-scroll" id="events-scroll">
-        <!-- Fallback (se remplaza dinámicamente si fetch OK) -->
+        <!-- Fallback simple (se elimina automáticamente si el fetch funciona) -->
         <div class="event-card">
             <h4>Workshop</h4>
             <p class="event-meta"><strong>Date</strong></p>
@@ -304,73 +305,10 @@
       if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
       }
-
-      // ======= Upcoming Events (auto) =======
-      // Lee los eventos desde data/events.json, toma los próximos 4 y los pinta.
-      const target = document.getElementById('events-scroll') || document.getElementById('events-scroll') || document.querySelector('.events-scroll');
-
-      async function loadUpcoming() {
-        try {
-          const res = await fetch('data/events.json', { cache: 'no-store' });
-          if (!res.ok) throw new Error('HTTP ' + res.status);
-          const all = await res.json();
-
-          const now = new Date();
-          // Normaliza fecha inicio; acepta 'start' o 'startDate' en el JSON
-          const events = all
-            .map(e => {
-              const startStr = e.start || e.startDate;
-              const endStr   = e.end   || e.endDate;
-              return {
-                ...e,
-                _start: startStr ? new Date(startStr) : null,
-                _end:   endStr   ? new Date(endStr)   : null
-              };
-            })
-            .filter(e => e._start && e._start >= new Date(now.toDateString())) // hoy o futuro
-            .sort((a,b) => a._start - b._start)
-            .slice(0, 4);
-
-          if (!events.length) return; // deja el fallback si no hay próximos
-
-          // Limpia fallback
-          target.innerHTML = '';
-
-          // Formateador de fecha (si hay hora la mostramos, si es all-day solo fecha)
-          const fmtDate = (date, hasTime) => {
-            if (!date) return '';
-            if (!hasTime) {
-              return date.toLocaleDateString('en-US', { year:'numeric', month:'short', day:'numeric' });
-            }
-            return date.toLocaleString('en-US', {
-              year:'numeric', month:'short', day:'numeric',
-              hour:'numeric', minute:'2-digit'
-            });
-          };
-
-          // Render
-          events.forEach(ev => {
-            const allDay = ev.allDay === true || (ev.start && ev.start.length === 10); // "YYYY-MM-DD"
-            const dateTxt = fmtDate(ev._start, !allDay);
-            const card = document.createElement('div');
-            card.className = 'event-card';
-            card.innerHTML = `
-              <h4>${ev.summary || 'Event'}</h4>
-              <p class="event-meta"><strong>${dateTxt || ''}</strong></p>
-              ${ev.location ? `<p class="event-meta">${ev.location}</p>` : ''}
-              <a href="events.html">Details →</a>
-            `;
-            target.appendChild(card);
-          });
-
-        } catch (err) {
-          // Silencioso: deja el fallback si hay error (CORS, 404, etc.)
-          console.warn('Upcoming events fetch error:', err);
-        }
-      }
-
-      loadUpcoming();
     });
 </script>
+
+<!-- Este script también rellena automáticamente los "Upcoming Events" en Home -->
+<script src="js/events.js" defer></script>
 </body>
 </html>
