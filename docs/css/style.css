@@ -97,7 +97,7 @@ body {
   background: var(--white);
   border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-  margin-top: 0.5rem;
+  margin-top: 0 rem;
   min-width: 230px;
   z-index: 1000;
   padding: 0.3rem 0;
