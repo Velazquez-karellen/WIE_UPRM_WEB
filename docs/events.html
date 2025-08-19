@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <link rel="icon" type="image/png" sizes="32x32" href="img/logos/logo-wie.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/logos/logo-wie.png">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>WIE UPRM – Eventos</title>
+    <title>WIE UPRM – Events</title>
     <link rel="stylesheet" href="css/style.css" />
     <style>
         /* —— Tabs —— */
@@ -36,9 +36,7 @@
           max-width: 800px;
           margin: 0 auto 3rem;
         }
-        .tab-content.active {
-          display: block;
-        }
+        .tab-content.active { display: block; }
 
         /* —— Timeline —— */
         .timeline {
@@ -59,7 +57,7 @@
           margin-bottom: 2rem;
           padding-left: 2rem;
 
-          /* ⬇ NUEVO: apilar contenido y llevar el botón abajo */
+          /* stack content so the button goes under the text/date */
           display: flex;
           flex-direction: column;
           align-items: flex-start;
@@ -75,20 +73,10 @@
           border: 3px solid #fff;
           box-shadow: 0 0 0 2px var(--accent1);
         }
-        .timeline-event h3 {
-          margin: 0; font-size: 1.25rem; color: var(--purple);
-        }
-        .timeline-event time {
-          font-size: .9rem; color: #666;
-        }
-        .timeline-event p {
-          margin: .5rem 0 1rem;
-        }
-        .timeline-event .btn.small {
-          font-size: .9rem; padding: .4rem .8rem;
-          /* ⬇ separa el botón del texto/fecha */
-          margin-top: .25rem;
-        }
+        .timeline-event h3 { margin: 0; font-size: 1.25rem; color: var(--purple); }
+        .timeline-event time { font-size: .9rem; color: #666; }
+        .timeline-event p { margin: .5rem 0 1rem; }
+        .timeline-event .btn.small { font-size: .9rem; padding: .4rem .8rem; margin-top: .25rem; }
 
         /* —— Calendar —— */
         .calendar-wrapper {
@@ -96,9 +84,7 @@
           border-radius: 4px;
           overflow: hidden;
         }
-        .calendar-wrapper iframe {
-          width: 100%; height: 650px; border: none;
-        }
+        .calendar-wrapper iframe { width: 100%; height: 650px; border: none; }
 
         /* —— Modals —— */
         .modal {
@@ -144,7 +130,6 @@
 </head>
 <body>
 
-<!-- Header + Navigation -->
 <header class="site-header">
     <div class="container header-container">
         <a href="index.html" class="logo">
@@ -184,40 +169,37 @@
 </header>
 
 <main class="container">
-    <h1 class="center" style="color:var(--purple);margin-top:2rem;">Eventos</h1>
+    <h1 class="center" style="color:var(--purple);margin-top:2rem;">Events</h1>
 
-    <!-- —— Tabs —— -->
     <div class="tabs">
         <button data-tab="timeline" class="active">Timeline</button>
-        <button data-tab="calendar">Calendario</button>
+        <button data-tab="calendar">Calendar</button>
     </div>
 
-    <!-- —— Timeline —— -->
+    <!-- Timeline -->
     <section id="timeline" class="tab-content active">
         <div id="timeline-loading" class="center">
             <div class="spinner" aria-hidden="true"></div>
-            <p class="muted">Cargando eventos…</p>
+            <p class="muted">Loading events…</p>
         </div>
         <div class="timeline" id="timeline-list" aria-live="polite"></div>
-        <p id="timeline-empty" class="center muted" style="display:none;">No hay eventos próximos en el calendario.</p>
+        <p id="timeline-empty" class="center muted" style="display:none;">No upcoming events in the calendar.</p>
     </section>
 
-    <!-- —— WIE Embed Calendar —— -->
+    <!-- Embedded Google Calendar -->
     <section id="calendar" class="tab-content">
         <div class="calendar-wrapper">
-            <iframe src="https://calendar.google.com/calendar/embed?src=wie%40uprm.edu&ctz=America%2FPuerto_Rico"></iframe>
+            <iframe src="https://calendar.google.com/calendar/embed?src=wie%40uprm.edu&ctz=America%2FPuerto_Rico" title="WIE UPRM Calendar"></iframe>
         </div>
     </section>
 </main>
 
-<!-- Footer -->
 <footer>
     <div class="container">
         <p>&copy; 2025 IEEE Women in Engineering UPRM Student Branch. All rights reserved.</p>
     </div>
 </footer>
 
-<!-- —— Scripts —— -->
 <script>
     // Tabs
     document.querySelectorAll('.tabs button').forEach(btn => {
@@ -235,8 +217,7 @@
     });
 </script>
 
-<!-- Script de eventos: construye timeline + modales con "Add a tu calendar" -->
+<!-- Builds the timeline + modals (with Add to your calendar) -->
 <script src="js/events.js" defer></script>
-
 </body>
 </html>
