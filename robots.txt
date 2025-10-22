@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://velazquez-karellen.github.io/WIE_UPRM_WEB/sitemap.xml
