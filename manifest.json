@@ -1,0 +1,21 @@
+{
+  "name": "IEEE Women in Engineering UPRM",
+  "short_name": "WIE UPRM",
+  "start_url": "https://velazquez-karellen.github.io/WIE_UPRM_WEB/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#652d76",
+  "description": "Official website of IEEE Women in Engineering UPRM Student Branch.",
+  "icons": [
+    {
+      "src": "img/logos/logo-wie.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "img/logos/logo-wie.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

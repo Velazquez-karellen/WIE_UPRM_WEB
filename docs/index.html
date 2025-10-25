@@ -1,84 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" sizes="32x32" href="img/logos/logo-wie.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/logos/logo-wie.png">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <!-- SEO Metadata -->
-    <meta name="description" content="IEEE Women in Engineering UPRM Student Branch – inspiring women in STEM at the University of Puerto Rico Mayagüez through outreach, mentorship, and leadership.">
+    <title>WIE UPRM – Empowering Women Engineers</title>
+    <link rel="canonical" href="https://velazquez-karellen.github.io/WIE_UPRM_WEB/">
+
+    <!-- Icons / PWA -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logos/logo-wie.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logos/logo-wie.png">
+    <link rel="apple-touch-icon" href="img/logos/logo-wie.png">
+    <meta name="theme-color" content="#652d76">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- SEO -->
+    <meta name="description" content="Official website of IEEE Women in Engineering UPRM Student Branch. Empowering women in STEM at the University of Puerto Rico Mayagüez through outreach, mentorship, and leadership.">
     <meta name="keywords" content="WIE UPRM, IEEE Women in Engineering, UPRM, University of Puerto Rico Mayaguez, Women in STEM, Puerto Rico Engineering, IEEE Student Branch">
     <meta name="author" content="IEEE WIE UPRM Student Branch">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="IEEE WIE UPRM – Women in Engineering">
-    <meta property="og:description" content="Official IEEE WIE Student Branch at UPRM promoting women in engineering and science.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="WIE UPRM – Empowering Women Engineers">
+    <meta property="og:description" content="IEEE Women in Engineering UPRM Student Branch | Inspiring women in STEM at the University of Puerto Rico Mayagüez.">
     <meta property="og:image" content="https://velazquez-karellen.github.io/WIE_UPRM_WEB/img/logos/logo-wie.png">
     <meta property="og:url" content="https://velazquez-karellen.github.io/WIE_UPRM_WEB/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="WIE UPRM – Empowering Women Engineers">
+    <meta name="twitter:description" content="IEEE Women in Engineering UPRM Student Branch | Inspiring women in STEM at UPRM.">
+    <meta name="twitter:image" content="https://velazquez-karellen.github.io/WIE_UPRM_WEB/img/logos/logo-wie.png">
 
     <!-- Google site verification -->
     <meta name="google-site-verification" content="I9bbKwjjcjCy6ofbIOtr8GN70XsPLm-mL6V4cf56Arg" />
 
-    <title>WIE UPRM – Home</title>
+    <!-- CSS principal -->
     <link rel="stylesheet" href="css/style.css" />
+
     <style>
         /* --- White HERO & HEADER --- */
-        .site-header, .site-header *, .site-header .nav-link, .site-header .dropdown-link {
-          color: #fff !important;
-        }
+        .site-header, .site-header *, .site-header .nav-link, .site-header .dropdown-link { color: #fff !important; }
         .site-header .dropdown-menu { background: rgba(30,0,40,0.97); }
         .site-header .dropdown-link:hover { background: var(--pink); color: #fff !important; }
 
         .hero h1, .hero p, .hero .btn, .hero .btn.outline, .hero a {
-          color: #fff !important;
-          text-shadow: 1px 2px 12px rgba(60,0,70,0.18);
+            color: #fff !important;
+            text-shadow: 1px 2px 12px rgba(60,0,70,0.18);
         }
         .hero .btn, .hero .btn.outline {
-          border: 2px solid #fff;
-          background: rgba(255,255,255,0.14);
-          color: #fff !important;
-          font-weight: 600;
-          border-radius: 6px;
-          padding: 0.7rem 1.4rem;
-          margin-top: 1rem;
-          margin-bottom: 0.7rem;
-          text-shadow: none;
-          transition: background 0.2s, color 0.2s, border-color 0.2s;
+            border: 2px solid #fff;
+            background: rgba(255,255,255,0.14);
+            color: #fff !important;
+            font-weight: 600;
+            border-radius: 6px;
+            padding: 0.7rem 1.4rem;
+            margin-top: 1rem;
+            margin-bottom: 0.7rem;
+            text-shadow: none;
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
         }
         .hero .btn:hover, .hero .btn.outline:hover { background: var(--pink); border-color: var(--pink); color: #fff !important; }
 
-        /* --- Search input universal --- */
+        /* --- Search input --- */
         .search-form input[type="text"],
         .search-form input[type="search"] {
-          background: #fff;
-          color: #222 !important;
-          border: 1px solid var(--pink);
-          border-radius: 4px;
-          font-size: 1rem;
-          outline: none;
-          transition: border 0.15s;
+            background: #fff;
+            color: #222 !important;
+            border: 1px solid var(--pink);
+            border-radius: 4px;
+            font-size: 1rem;
+            outline: none;
+            transition: border 0.15s;
         }
         .search-form input[type="text"]:focus,
         .search-form input[type="search"]:focus {
-          border-color: var(--purple);
-          background: #f8e9ff;
+            border-color: var(--purple);
+            background: #f8e9ff;
         }
 
         /* HERO */
         .hero {
-          position: relative;
-          background: url('img/icon-program.jpg') center/cover no-repeat;
-          color: #fff;
-          text-align: center;
-          padding: 6rem 1rem 5rem 1rem;
+            position: relative;
+            background: url('img/icon-program.jpg') center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 6rem 1rem 5rem 1rem;
         }
         .hero::after {
-          content: '';
-          position: absolute;
-          top: 0; left: 0; width: 100%; height: 100%;
-          background: rgba(0,0,0,0.5);
-          z-index: 0;
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 0;
         }
         .hero .container { position: relative; z-index: 1; }
         .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
@@ -87,59 +102,49 @@
         /* --- Upcoming Events --- */
         #upcoming-events { padding: 2rem 0; }
         #upcoming-events h2 { text-align: center; margin-bottom: 1rem; color: var(--purple); }
-        .events-scroll {
-          display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;
-        }
+        .events-scroll { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
         .event-card {
-          flex: 0 0 calc(25% - 1rem);
-          min-width: 200px;
-          background: var(--white);
-          border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-          padding: 1rem;
-          text-align: left;
-          transition: box-shadow .18s, transform .18s;
+            flex: 0 0 calc(25% - 1rem);
+            min-width: 200px;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 1rem;
+            text-align: left;
+            transition: box-shadow .18s, transform .18s;
         }
         .event-card:hover { box-shadow: 0 4px 20px rgba(120,0,160,0.14); transform: translateY(-2px); }
         .event-card h4 { margin: .5rem 0; color: var(--purple); }
         .event-meta { font-size: .95rem; color: #555; margin-bottom: .25rem; }
         .event-card a { display:inline-block; margin-top:.35rem; }
 
-        /* --- Features Cards --- */
+        /* --- Features --- */
         #features { padding: 2rem 0; }
         #features .feature-cards {
-          display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1rem;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1rem;
         }
         .feature-card {
-          background: var(--white); border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-          padding: 1.5rem; text-align: center; transition: box-shadow .16s;
+            background: var(--white); border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 1.5rem; text-align: center; transition: box-shadow .16s;
         }
         .feature-card:hover { box-shadow: 0 4px 18px rgba(120,0,160,0.13); }
         .feature-card img { height: 60px; margin-bottom: .75rem; }
         .feature-card h3 { margin: .5rem 0; color: var(--purple); }
 
-        /* --- Sponsors Logos --- */
+        /* --- Sponsors --- */
         #sponsors-logos { padding: 2rem 0; text-align: center; }
         .logo-scroll { display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap; }
         .logo-item a img { height: 150px; filter: grayscale(50%); transition: filter .3s; }
         .logo-item a img:hover { filter: none; }
 
-        /* --- Testimonial --- */
-        #testimonial blockquote {
-          font-style: italic; text-align: center; margin: 2rem auto; max-width: 600px; position: relative;
-        }
-        #testimonial cite { display: block; margin-top: 1rem; font-weight: bold; color: var(--purple); }
-
         /* --- Stay Connected --- */
         #stay-connected { text-align: center; padding: 2rem 0; }
-        .social-icons-row {
-          display: flex; justify-content: center; align-items: center; gap: 2rem; margin: 1.5rem 0 0.5rem 0;
-        }
+        .social-icons-row { display: flex; justify-content: center; align-items: center; gap: 2rem; margin: 1.5rem 0 0.5rem 0; }
         .icon-link { display: inline-flex; text-decoration: none; }
         .icon-circle {
-          width: 60px; height: 60px; background: #fff; border-radius: 50%;
-          display: inline-flex; align-items: center; justify-content: center;
-          box-shadow: 0 1px 4px rgba(0,0,0,0.13); transition: box-shadow 0.2s;
+            width: 60px; height: 60px; background: #fff; border-radius: 50%;
+            display: inline-flex; align-items: center; justify-content: center;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.13); transition: box-shadow 0.2s;
         }
         .icon-circle img { width: 32px; height: 32px; object-fit: contain; }
         .icon-link:hover .icon-circle { box-shadow: 0 2px 8px rgba(0,0,0,0.18); }
@@ -147,6 +152,23 @@
         @media(max-width: 1024px) { .event-card { flex: 0 0 45%; } }
         @media(max-width: 600px)  { .event-card { flex: 0 0 95%; } }
     </style>
+
+    <!-- JSON-LD Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "IEEE Women in Engineering UPRM",
+            "url": "https://velazquez-karellen.github.io/WIE_UPRM_WEB/",
+            "logo": "https://velazquez-karellen.github.io/WIE_UPRM_WEB/img/logos/logo-wie.png",
+            "sameAs": [
+                "https://www.facebook.com/wie.uprm",
+                "https://www.instagram.com/wieuprm/",
+                "https://x.com/wieuprm",
+                "https://www.linkedin.com/company/women-in-engineering-ieee-uprm-student-branch/"
+            ]
+        }
+    </script>
 </head>
 <body>
 
@@ -195,16 +217,15 @@
         <h1>Empowering Women Engineers</h1>
         <p>Join IEEE Women in Engineering UPRM and connect with peers, mentors, and industry leaders.</p>
         <a href="about.html" class="btn">Learn More</a>
-        <a href="https://ieee.org" class="btn outline" target="_blank">Join Us</a>
+        <a href="https://ieee.org" class="btn outline" target="_blank" rel="noopener">Join Us</a>
     </div>
 </section>
 
 <!-- Upcoming Events -->
 <section id="upcoming-events" class="container">
     <h2>Upcoming Events</h2>
-    <!-- El script js/events.js reemplaza el contenido de este contenedor con cards horizontales -->
+    <!-- js/events.js reemplaza lo de abajo con tarjetas dinámicas -->
     <div class="events-scroll" id="events-scroll">
-        <!-- Fallback simple (se elimina automáticamente si el fetch funciona) -->
         <div class="event-card">
             <h4>Workshop</h4>
             <p class="event-meta"><strong>Date</strong></p>
@@ -263,23 +284,21 @@
     <h2>Our Sponsors</h2>
     <div class="logo-scroll">
         <div class="logo-item">
-            <a href="https://www.sargentlundy.com/" target="_blank"><img src="img/logos/sponsor-sargent.jpg" alt="Sargent & Lundy"></a>
+            <a href="https://www.sargentlundy.com/" target="_blank" rel="noopener">
+                <img src="img/logos/sponsor-sargent.jpg" alt="Sargent & Lundy">
+            </a>
         </div>
         <div class="logo-item">
-            <a href="https://www.l3harris.com/" target="_blank"><img src="img/logos/sponsor-l3harris.png" alt="L3Harris"></a>
+            <a href="https://www.l3harris.com/" target="_blank" rel="noopener">
+                <img src="img/logos/sponsor-l3harris.png" alt="L3Harris">
+            </a>
         </div>
         <div class="logo-item">
-            <a href="https://www.merck.com/" target="_blank"><img src="img/logos/sponsor-merck.jpg" alt="Merck"></a>
+            <a href="https://www.merck.com/" target="_blank" rel="noopener">
+                <img src="img/logos/sponsor-merck.jpg" alt="Merck">
+            </a>
         </div>
     </div>
-</section>
-
-<!-- Testimonial -->
-<section id="testimonial" class="container">
-    <blockquote>
-        "Participating in WIE UPRM changed my perspective on engineering and opened doors I never imagined."<br>
-        <cite>- Jane Doe, Alumna & Mentor</cite>
-    </blockquote>
 </section>
 
 <!-- Stay Connected -->
@@ -289,17 +308,17 @@
         <a href="mailto:wie@uprm.edu" class="icon-link" aria-label="Send email">
             <span class="icon-circle"><img src="img/logos/black_wie_logo.png" alt="Email"></span>
         </a>
-        <a href="https://www.facebook.com/wie.uprm" target="_blank" class="icon-link" aria-label="Facebook">
+        <a href="https://www.facebook.com/wie.uprm" target="_blank" rel="noopener" class="icon-link" aria-label="Facebook">
             <span class="icon-circle"><img src="img/logos/facebook.png" alt="Facebook"></span>
         </a>
-        <a href="https://www.instagram.com/wieuprm/#" target="_blank" class="icon-link" aria-label="Instagram">
+        <a href="https://www.instagram.com/wieuprm/#" target="_blank" rel="noopener" class="icon-link" aria-label="Instagram">
             <span class="icon-circle"><img src="img/logos/instagram.jpg" alt="Instagram"></span>
         </a>
         <a href="https://www.linkedin.com/company/women-in-engineering-ieee-uprm-student-branch/posts/?feedView=all"
-           target="_blank" class="icon-link" aria-label="LinkedIn">
+           target="_blank" rel="noopener" class="icon-link" aria-label="LinkedIn">
             <span class="icon-circle"><img src="img/logos/linkedin.png" alt="LinkedIn"></span>
         </a>
-        <a href="https://x.com/wieuprm" target="_blank" class="icon-link" aria-label="X">
+        <a href="https://x.com/wieuprm" target="_blank" rel="noopener" class="icon-link" aria-label="X">
             <span class="icon-circle"><img src="img/logos/x.jpg" alt="X"></span>
         </a>
     </div>
@@ -315,15 +334,15 @@
 <script>
     // Mobile menu toggle
     document.addEventListener('DOMContentLoaded', () => {
-      const menuToggle = document.getElementById('menu-toggle');
-      const navLinks = document.getElementById('nav-links');
-      if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-      }
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+        }
     });
 </script>
 
-<!-- Este script también rellena automáticamente los "Upcoming Events" en Home -->
+<!-- Rellena automáticamente "Upcoming Events" -->
 <script src="js/events.js" defer></script>
 </body>
 </html>
