@@ -3,6 +3,9 @@
 <head>
     <link rel="icon" type="image/png" sizes="32x32" href="img/logos/logo-wie.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/logos/logo-wie.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -114,6 +117,19 @@
             margin:.5rem 0 .25rem; color: var(--purple); font-size: 1.15rem;
         }
         .board-card .info p{ margin:0; font-size: 1rem; color: var(--gray-dark); }
+
+        .linkedin-link {
+            display: inline-block;
+            margin-top: 0.4rem;
+            font-size: 1.5rem;
+            color: #0A66C2;
+            transition: color 0.2s, transform 0.2s;
+            }
+            .linkedin-link:hover {
+            color: #004182;
+            transform: scale(1.1);
+            }
+
     </style>
 </head>
 <body>
@@ -184,18 +200,18 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const members = [
-            { name:'Gianinna Maldonado',  role:'President', img:'img/board/maldonado.JPG' },
-            { name:"Shalimar O’Neill",    role:'Vice President of Internal Affairs', img:'img/board/oneill.jpg' },
-            { name:'Lidarys Román',       role:'Vice President of External Affairs', img:'img/board/roman1.jpg' },
+            { name:'Gianinna Maldonado',  role:'President', img:'img/board/maldonado.JPG', linkedin: 'https://www.linkedin.com/in/gianinna-maldonado-valed%C3%B3n-964419250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+            { name:"Shalimar O’Neill",    role:'Vice President of Internal Affairs', img:'img/board/oneill.jpg', linkedin: 'https://www.linkedin.com/in/shalimar-o-neill-serrano-6183262a9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+            { name:'Lidarys Román',       role:'Vice President of External Affairs', img:'img/board/roman1.jpg', linkedin: 'https://www.linkedin.com/in/lidarysroman' },
             { name:'Camila Camacho',      role:'Secretary', img:'img/board/camacho.JPG' },
-            { name:'Alondra Pellot',      role:'Treasurer', img:'img/board/pellot.jpg' },
+            { name:'Alondra Pellot',      role:'Treasurer', img:'img/board/pellot.jpg', linkedin: 'https://www.linkedin.com/in/alondra-pellot-crespo-7b9a89389?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
             { name:'Paola Torres',        role:'Social Media Manager', img:'img/board/torres.JPG' },
             { name:'Alondra Pérez',       role:'Social Media', img:'img/board/perez.JPG' },
-            { name:'Karellen Velázquez',  role:'Webmaster Team Manager', img:'img/board/velazquez.JPG' },
-            { name:'Yamilet Gómez',       role:'Webmaster Team', img:'img/board/gomez.JPG' },
-            { name:'Luis Núñez',          role:'Mentorship Program Manager', img:'img/board/nunez.JPG' },
-            { name:'Ariana Torres',       role:'Mentorship Program Coordinator', img:'img/board/torres2.JPG' },
-            { name:'Amaia Román',         role:'Public Relations Officer', img:'img/board/roman2.JPG' },
+            { name:'Karellen Velázquez',  role:'Webmaster Team Manager', img:'img/board/velazquez.JPG', linkedin: 'https://www.linkedin.com/in/karellen-velazquez/' },
+            { name:'Yamilet Gómez',       role:'Webmaster Team', img:'img/board/gomez.JPG', linkedin: 'https://www.linkedin.com/in/yamilet-gomez-marte-82a693363/'},
+            { name:'Luis Núñez',          role:'Mentorship Program Manager', img:'img/board/nunez.JPG', linkedin: 'https://www.linkedin.com/in/luisnunez32' },
+            { name:'Ariana Torres',       role:'Mentorship Program Coordinator', img:'img/board/torres2.JPG', linkedin: 'https://www.linkedin.com/in/arianatorresventura?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+            { name:'Amaia Román',         role:'Public Relations Officer', img:'img/board/roman2.JPG', linkedin: 'https://www.linkedin.com/in/amaia-rom%C3%A1n?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' },
             // { key:13, name:'Member 13', role:'Position 13', img:'img/board/13.jpg' },
             // { key:14, name:'Member 14', role:'Position 14', img:'img/board/14.jpg' },
             // { key:15, name:'Member 15', role:'Position 15', img:'img/board/15.jpg' },
@@ -223,6 +239,12 @@
       <div class="info">
         <h3>${m.name}</h3>
         <p>${m.role}</p>
+
+        ${m.linkedin ? `
+            <a href="${m.linkedin}" target="_blank" class="linkedin-link" aria-label="LinkedIn profile of ${m.name}">
+                <i class="fab fa-linkedin"></i>
+            </a>` : ''}
+
       </div>
     `;
             grid.appendChild(card);
